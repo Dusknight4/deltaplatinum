@@ -33,6 +33,7 @@
 #include "field_system.h"
 #include "field_task.h"
 #include "field_transition.h"
+#include "follower_mon.h"
 #include "game_overlay.h"
 #include "heap.h"
 #include "inlines.h"
@@ -350,6 +351,10 @@ static void FieldMapChange_CreateObjects(FieldSystem *fieldSystem)
 
     sub_0203A418(fieldSystem);
     MapObjectMan_StopAllMovement(fieldSystem->mapObjMan);
+
+    // FOLLOWER MON (new feature): spawn/refresh the overworld follower for this map, now that both
+    // mapObjMan and playerAvatar are valid. See src/follower_mon.c's header comment for the full design.
+    FollowerMon_Refresh(fieldSystem);
 }
 
 static void FieldMapChange_DeleteObjects(FieldSystem *fieldSystem)
@@ -371,6 +376,9 @@ static void FieldMapChange_LoadObjects(FieldSystem *fieldSystem)
     fieldSystem->playerAvatar = PlayerAvatar_NewLoad(fieldSystem->mapObjMan, playerData, gender);
 
     MapObjectMan_StopAllMovement(fieldSystem->mapObjMan);
+
+    // FOLLOWER MON (new feature): see the identical hook/comment in FieldMapChange_CreateObjects above.
+    FollowerMon_Refresh(fieldSystem);
 }
 
 static void FieldMapChange_InitTerrainCollisionManager(FieldSystem *fieldSystem)

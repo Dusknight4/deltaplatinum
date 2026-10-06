@@ -23,6 +23,7 @@
 #include "generated/movement_types.h"
 #include "generated/object_events_gfx.h"
 #include "generated/pokemon_contest_ranks.h"
+#include "generated/pokemon_types.h"
 #include "generated/save_types.h"
 #include "generated/signpost_commands.h"
 
@@ -114,6 +115,8 @@
 #include "field_script_context.h"
 #include "field_system.h"
 #include "field_task.h"
+#include "follower_mon.h"
+#include "follower_mon_talk.h"
 #include "field_transition.h"
 #include "game_records.h"
 #include "great_marsh_lookout.h"
@@ -332,6 +335,8 @@ static BOOL ScrCmd_ApplyMovement(ScriptContext *ctx);
 static BOOL ScrCmd_WaitMovement(ScriptContext *ctx);
 static BOOL ScrCmd_LockAll(ScriptContext *ctx);
 static BOOL sub_020410CC(ScriptContext *ctx);
+static BOOL ScriptContext_WaitFollowerMonStep(ScriptContext *ctx);
+static void FollowerMon_FollowScriptedPlayer(FieldSystem *fieldSystem, MapObject *object);
 static BOOL ScrCmd_ReleaseAll(ScriptContext *ctx);
 static BOOL ScrCmd_LockObject(ScriptContext *ctx);
 static BOOL ScrCmd_ReleaseObject(ScriptContext *ctx);
@@ -409,6 +414,7 @@ static BOOL ScrCmd_UseFly(ScriptContext *ctx);
 static BOOL ScrCmd_0C3(ScriptContext *ctx);
 static BOOL ScrCmd_0C4(ScriptContext *ctx);
 static BOOL ScrCmd_PlayHMCutIn(ScriptContext *ctx);
+static BOOL ScrCmd_FollowerMonFieldMove(ScriptContext *ctx);
 static BOOL ScriptContext_WaitForHMCutInFinished(ScriptContext *ctx);
 static BOOL ScrCmd_ChangeIntoContestAttire(ScriptContext *ctx);
 static BOOL ScrCmd_CheckPlayerOnBike(ScriptContext *ctx);
@@ -2036,6 +2042,8 @@ static BOOL ScrCmd_ApplyMovement(ScriptContext *ctx)
         return FALSE;
     }
 
+    FollowerMon_FollowScriptedPlayer(ctx->fieldSystem, object);
+
     SysTask *task = MapObject_StartAnimation(object, (MapObjectAnimCmd *)(ctx->scriptPtr + movementOffset));
     u8 *movementCount = FieldSystem_GetScriptMemberPtr(ctx->fieldSystem, SCRIPT_MANAGER_MOVEMENT_COUNT);
     (*movementCount)++;
@@ -2083,6 +2091,8 @@ static BOOL ScrCmd_Unused_2A1(ScriptContext *ctx)
     v10[v11].movementAction = MOVEMENT_ACTION_END;
     v10[v11].count = 0;
 
+    FollowerMon_FollowScriptedPlayer(ctx->fieldSystem, v4);
+
     SysTask *v1 = MapObject_StartAnimation(v4, v10);
     u8 *v2 = FieldSystem_GetScriptMemberPtr(ctx->fieldSystem, SCRIPT_MANAGER_MOVEMENT_COUNT);
     (*v2)++;
@@ -2097,7 +2107,23 @@ static MapObject *GetLocalMapObjByIndex(FieldSystem *fieldSystem, int localID)
     MapObject *object;
 
     if (localID == LOCALID_FOLLOWER) {
-        object = MapObjMan_GetLocalMapObjByMovementType(fieldSystem->mapObjMan, MOVEMENT_TYPE_FOLLOW_PLAYER);
+        // ENTRY P87: LOCALID_FOLLOWER means the partner trainer (Cheryl, Mira, ...). The follower Pokemon has the same
+        // movement type, so skip it; fall back to the vanilla lookup if there is no other FOLLOW_PLAYER object.
+        int index = 0;
+
+        object = NULL;
+
+        while (MapObjectMan_FindObjectWithStatus(fieldSystem->mapObjMan, &object, &index, MAP_OBJ_STATUS_0) == TRUE) {
+            if (MapObject_GetMovementType(object) == MOVEMENT_TYPE_FOLLOW_PLAYER && FollowerMon_IsFollowerMonObject(object) == FALSE) {
+                break;
+            }
+
+            object = NULL;
+        }
+
+        if (object == NULL) {
+            object = MapObjMan_GetLocalMapObjByMovementType(fieldSystem->mapObjMan, MOVEMENT_TYPE_FOLLOW_PLAYER);
+        }
     } else if (localID == LOCALID_CAMERA) {
         MapObject **cameraObject = FieldSystem_GetScriptMemberPtr(fieldSystem, SCRIPT_MANAGER_CAMERA_OBJECT);
         object = *cameraObject;
@@ -2171,6 +2197,11 @@ static void sub_02040F5C(SysTask *task, void *param1)
     return;
 }
 
+// ENTRY P87: see ScrCmd_LockAll. The frame limit only guards against a follower that can never finish its step.
+#define FOLLOWER_LOCK_WAIT_MAX_FRAMES 60
+
+static u8 sFollowerLockWaitFrames;
+
 static BOOL ScrCmd_LockAll(ScriptContext *ctx)
 {
     FieldSystem *fieldSystem = ctx->fieldSystem;
@@ -2188,6 +2219,18 @@ static BOOL ScrCmd_LockAll(ScriptContext *ctx)
 
             MapObject_SetPauseMovementOff(object);
             ScriptContext_Pause(ctx, sub_020410CC);
+            return TRUE;
+        }
+
+        // ENTRY P87 (HG ScrCmd_LockAll / _WaitFollowMonPaused): let the follower Pokemon finish the step it is taking -
+        // or the one it has not started yet (e.g. the player was just spotted by a trainer) - before it is paused,
+        // so it is never left a tile behind or halfway between two tiles for the whole cutscene or battle.
+        MapObject *followerMon = FollowerMon_GetMapObject(fieldSystem);
+
+        if (followerMon != NULL && FollowerMon_IsStepPending(followerMon)) {
+            MapObject_SetPauseMovementOff(followerMon);
+            sFollowerLockWaitFrames = 0;
+            ScriptContext_Pause(ctx, ScriptContext_WaitFollowerMonStep);
             return TRUE;
         }
     } else {
@@ -2253,11 +2296,57 @@ static BOOL sub_02041004(ScriptContext *ctx)
         }
     }
 
+    if (inline_020410F4_1(1 << 4)) {
+        MapObject *followerMon = FollowerMon_GetMapObject(fieldSystem);
+
+        if (followerMon == NULL) {
+            inline_020410F4_3(1 << 4);
+        } else if (!FollowerMon_IsStepPending(followerMon) || ++sFollowerLockWaitFrames >= FOLLOWER_LOCK_WAIT_MAX_FRAMES) {
+            MapObject_SetPauseMovementOn(followerMon);
+            inline_020410F4_3(1 << 4);
+            sFollowerLockWaitFrames = 0;
+        }
+    }
+
     if (Unk_021C07E0 == 0) {
         return TRUE;
     }
 
     return FALSE;
+}
+
+static BOOL ScriptContext_WaitFollowerMonStep(ScriptContext *ctx)
+{
+    MapObject *followerMon = FollowerMon_GetMapObject(ctx->fieldSystem);
+
+    if (followerMon == NULL) {
+        sFollowerLockWaitFrames = 0;
+        return TRUE;
+    }
+
+    if (FollowerMon_IsStepPending(followerMon) && ++sFollowerLockWaitFrames < FOLLOWER_LOCK_WAIT_MAX_FRAMES) {
+        return FALSE;
+    }
+
+    sFollowerLockWaitFrames = 0;
+    MapObject_SetPauseMovementOn(followerMon);
+    return TRUE;
+}
+
+// ENTRY P87: cutscenes walk the player with ApplyMovement while LockAll has paused every other object. HG's own
+// cutscene scripts unpause its follower; Platinum's scripts know nothing about it, so whenever a script moves the
+// player the follower Pokemon is unpaused and keeps following (src/unk_02069BE0.c steps it at the player's speed).
+static void FollowerMon_FollowScriptedPlayer(FieldSystem *fieldSystem, MapObject *object)
+{
+    if (object == NULL || object != PlayerAvatar_GetMapObject(fieldSystem->playerAvatar)) {
+        return;
+    }
+
+    MapObject *followerMon = FollowerMon_GetMapObject(fieldSystem);
+
+    if (followerMon != NULL) {
+        MapObject_SetPauseMovementOff(followerMon);
+    }
 }
 
 static BOOL sub_020410CC(ScriptContext *ctx)
@@ -2307,6 +2396,15 @@ static BOOL ScrCmd_LockLastTalked(ScriptContext *ctx)
             inline_020410F4_2(1 << 3);
             MapObject_SetPauseMovementOff(v4);
         }
+    }
+
+    // ENTRY P87 (HG ScrCmd_LockLastTalked flag 2): the follower Pokemon finishes its step first.
+    MapObject *followerMon = FollowerMon_GetMapObject(fieldSystem);
+
+    if (followerMon != NULL && followerMon != *v1 && FollowerMon_IsStepPending(followerMon)) {
+        inline_020410F4_2(1 << 4);
+        MapObject_SetPauseMovementOff(followerMon);
+        sFollowerLockWaitFrames = 0;
     }
 
     ScriptContext_Pause(ctx, sub_02041004);
@@ -3617,6 +3715,7 @@ static BOOL ScrCmd_GetCurrentMapID(ScriptContext *ctx)
 
 static BOOL ScrCmd_UseRockClimb(ScriptContext *ctx)
 {
+    FollowerMonTalk_FieldMoveTypeMood(ctx->fieldSystem, TYPE_NORMAL); // ENTRY P64 (HG ov01_021F26CC)
     FieldTask_StartUseRockClimb(ctx->task, PlayerAvatar_GetFacingDir(ctx->fieldSystem->playerAvatar), ScriptContext_GetVar(ctx));
     return TRUE;
 }
@@ -3633,6 +3732,7 @@ static BOOL ScrCmd_UseSurf(ScriptContext *ctx)
         direction = PlayerAvatar_GetMovingDir(ctx->fieldSystem->playerAvatar);
     }
 
+    FollowerMonTalk_FieldMoveTypeMood(ctx->fieldSystem, TYPE_WATER); // ENTRY P64 (HG ov01_021F2118)
     FieldTask_StartUseSurf(ctx->task, direction, ScriptContext_GetVar(ctx));
 
     return TRUE;
@@ -3678,6 +3778,27 @@ static BOOL ScrCmd_PlayHMCutIn(ScriptContext *ctx)
 {
     void **dataPtr = FieldSystem_GetScriptMemberPtr(ctx->fieldSystem, SCRIPT_MANAGER_DATA_PTR);
     u16 slot = ScriptContext_GetVar(ctx);
+
+    Pokemon *mon = Party_GetPokemonBySlotIndex(SaveData_GetParty(ctx->fieldSystem->saveData), slot);
+    *dataPtr = HMCutIn_StartTask(ctx->fieldSystem, FALSE, mon, PlayerAvatar_GetGender(ctx->fieldSystem->playerAvatar));
+
+    ScriptContext_Pause(ctx, ScriptContext_WaitForHMCutInFinished);
+    return TRUE;
+}
+
+// ENTRY P64: HG scr_seq_0146 - when the Pokemon using Cut/Rock Smash/Strength/Flash is the follower itself, the
+// follower does the move (mood + reaction hops + cry, src/follower_mon_talk.c) instead of the HM cut-in;
+// otherwise this is exactly ScrCmd_PlayHMCutIn.
+static BOOL ScrCmd_FollowerMonFieldMove(ScriptContext *ctx)
+{
+    void **dataPtr = FieldSystem_GetScriptMemberPtr(ctx->fieldSystem, SCRIPT_MANAGER_DATA_PTR);
+    u16 slot = ScriptContext_GetVar(ctx);
+    u8 moodAmount = ScriptContext_ReadByte(ctx);
+    u8 type = ScriptContext_ReadByte(ctx);
+
+    if (FollowerMonTalk_StartFieldMoveReaction(ctx, slot, moodAmount, type)) {
+        return TRUE;
+    }
 
     Pokemon *mon = Party_GetPokemonBySlotIndex(SaveData_GetParty(ctx->fieldSystem->saveData), slot);
     *dataPtr = HMCutIn_StartTask(ctx->fieldSystem, FALSE, mon, PlayerAvatar_GetGender(ctx->fieldSystem->playerAvatar));

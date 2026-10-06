@@ -8,6 +8,7 @@
 #include "generated/badges.h"
 #include "generated/journal_location_events.h"
 #include "generated/object_events_gfx.h"
+#include "generated/pokemon_types.h"
 
 #include "struct_decls/map_object.h"
 #include "struct_defs/struct_020711C8.h"
@@ -22,6 +23,7 @@
 #include "field_map_change.h"
 #include "field_overworld_state.h"
 #include "field_task.h"
+#include "follower_mon_talk.h"
 #include "heap.h"
 #include "inlines.h"
 #include "journal.h"
@@ -198,6 +200,7 @@ BOOL FieldMoves_FlyTask(FieldTask *task)
 
     switch (ctx->state) {
     case FLY_STATE_START_CUT_IN:
+        FollowerMonTalk_FieldMoveTypeMood(ctx->fieldSystem, TYPE_FLYING); // ENTRY P64 (HG sub_02067C30)
         ctx->cutInTask = HMCutIn_StartTask(ctx->fieldSystem, TRUE, ctx->mon, PlayerAvatar_GetGender(ctx->fieldSystem->playerAvatar));
         ctx->state++;
         break;
@@ -745,6 +748,8 @@ static BOOL FieldMoves_TeleportTask(FieldTask *task)
     UnkStruct_020711C8 *v1 = FieldTask_GetEnv(task);
     FieldWarp *fieldWarp = FieldWarp_InitTeleport(fieldSystem, v1->unk_00, HEAP_ID_FIELD1);
 
+    FollowerMonTalk_FieldMoveTypeMood(fieldSystem, TYPE_PSYCHIC); // ENTRY P64 (HG Task_FieldTeleport)
+
     Heap_Free(v1);
     FieldTask_InitJump(task, FieldWarp_TeleportFadeOut, fieldWarp);
 
@@ -788,6 +793,8 @@ static BOOL FieldMoves_DigTask(FieldTask *task)
     UnkStruct_020711C8 *v1 = FieldTask_GetEnv(task);
     FieldWarp *fieldWarp = FieldWarp_InitDig(fieldSystem, v1->unk_00, HEAP_ID_FIELD2);
 
+    FollowerMonTalk_FieldMoveTypeMood(fieldSystem, TYPE_GROUND); // ENTRY P64 (HG Task_FieldDig)
+
     void *journalEntryLocationEvent = JournalEntry_CreateEventUsedMove(FIELD_MOVE_DIG, fieldSystem->location->mapHeaderID, HEAP_ID_FIELD1);
     JournalEntry_SaveData(fieldSystem->journalEntry, journalEntryLocationEvent, JOURNAL_LOCATION);
 
@@ -821,6 +828,7 @@ static void FieldMoves_SetSweetScentTask(FieldMovePokemon *fieldMoveMon, const F
     FieldSystem_StartFieldMap(fieldSystem);
 
     startMenu->callback = ov5_021F101C;
+    FollowerMonTalk_FieldMoveTypeMood(fieldSystem, TYPE_GRASS); // ENTRY P64 (HG Task_UseSweetScentInField)
     startMenu->taskData = v2;
     startMenu->state = START_MENU_STATE_NEW_TASK;
 

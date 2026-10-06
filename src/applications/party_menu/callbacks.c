@@ -22,6 +22,7 @@
 
 #include "bag.h"
 #include "bg_window.h"
+#include "follower_mon_talk.h"
 #include "font.h"
 #include "heap.h"
 #include "item.h"
@@ -1119,6 +1120,7 @@ static void TeachMove(PartyMenuApplication *application, Pokemon *mon, u32 moveS
         }
 
         Pokemon_UpdateFriendship(mon, FRIENDSHIP_EVENT_LEARN_TMHM, (u16)GetCurrentMapLabel(application));
+        FollowerMonTalk_AddMoodForMon(mon, FOLLOWER_MOOD_LEARN_TMHM); // ENTRY P64 (HG party_menu_items.c)
     }
 }
 

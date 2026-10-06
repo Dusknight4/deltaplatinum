@@ -44,6 +44,7 @@
 #include "char_transfer.h"
 #include "dexmode_checker.h"
 #include "flags.h"
+#include "follower_mon_talk.h"
 #include "heap.h"
 #include "item.h"
 #include "message.h"
@@ -9855,6 +9856,7 @@ static void BattleScript_GetExpTask(SysTask *task, void *inData)
             }
 
             Pokemon_UpdateFriendship(mon, FRIENDSHIP_EVENT_LEVEL_UP, BattleSystem_GetMapHeader(data->battleSys));
+            FollowerMonTalk_AddMoodForMon(mon, FOLLOWER_MOOD_LEVEL_UP_IN_BATTLE); // ENTRY P64 (HG battle_command.c)
             Pokemon_CalcStats(mon);
 
             if (data->battleCtx->selectedPartySlot[expBattler] == slot) {
@@ -12087,11 +12089,14 @@ static void BattleScript_UpdateFriendship(BattleSystem *battleSys, BattleContext
     if (battleCtx->battleMons[battler].level > battleCtx->battleMons[faintingBattler].level) {
         if (battleCtx->battleMons[battler].level - battleCtx->battleMons[faintingBattler].level >= 30) {
             Pokemon_UpdateFriendship(mon, FRIENDSHIP_EVENT_BATTLE_FAINT_HIGH_LVL_DIFF, BattleSystem_GetMapHeader(battleSys));
+            FollowerMonTalk_AddMoodForMon(mon, FOLLOWER_MOOD_BATTLE_FAINT_HIGH); // ENTRY P64 (HG battle_command.c)
         } else {
             Pokemon_UpdateFriendship(mon, FRIENDSHIP_EVENT_BATTLE_FAINT, BattleSystem_GetMapHeader(battleSys));
+            FollowerMonTalk_AddMoodForMon(mon, FOLLOWER_MOOD_BATTLE_FAINT);
         }
     } else {
         Pokemon_UpdateFriendship(mon, FRIENDSHIP_EVENT_BATTLE_FAINT, BattleSystem_GetMapHeader(battleSys));
+        FollowerMonTalk_AddMoodForMon(mon, FOLLOWER_MOOD_BATTLE_FAINT);
     }
 }
 

@@ -4,6 +4,7 @@
 #include <string.h>
 
 #include "generated/movement_actions.h"
+#include "generated/movement_types.h"
 
 #include "struct_decls/map_object.h"
 #include "struct_decls/map_object_manager.h"
@@ -12,6 +13,7 @@
 #include "overlay005/field_effect_manager.h"
 #include "overlay005/ov5_021F3D00.h"
 
+#include "follower_mon_talk.h"
 #include "map_object.h"
 #include "map_object_move.h"
 #include "map_tile_behavior.h"
@@ -27,6 +29,12 @@ typedef struct {
     s16 unk_02;
     s16 unk_04;
     u16 unk_06;
+    // ENTRY P64/P65: ledge following for the follower Pokemon (FollowerMon_TryLedgeFollow). The movement data
+    // buffer is 16 bytes (sub_02062A54); this struct uses 14.
+    u8 ledgePending;
+    u8 ledgeDir;
+    s16 ledgeStartX;
+    s16 ledgeStartZ;
 } UnkStruct_02069CA8;
 
 typedef struct {
@@ -65,6 +73,7 @@ static int sub_02069CFC(MapObject *mapObj, UnkStruct_02069CA8 *param1);
 static void sub_02069D30(MapObject *mapObj, UnkStruct_02069CA8 *param1);
 static u32 sub_02069D50(MapObject *mapObj);
 static int sub_02069D8C(MapObject *mapObj);
+static int FollowerMon_Follow(MapObject *mapObj, UnkStruct_02069CA8 *param1);
 static int sub_02069F48(MapObject *mapObj, UnkStruct_02069F48 *param1);
 static void sub_02069FC4(MapObject *mapObj, UnkStruct_02069F48 *param1, MapObject *param2);
 static int sub_02069FE8(MapObject *mapObj, UnkStruct_02069F48 *param1);
@@ -113,7 +122,7 @@ static int sub_02069C48(MapObject *mapObj, UnkStruct_02069CA8 *param1)
     if (sub_02069CFC(mapObj, param1) == 1) {
         sub_02069D30(mapObj, param1);
 
-        if (sub_02069D8C(mapObj) == 1) {
+        if (FollowerMon_Follow(mapObj, param1) == 1) {
             sub_02062D04(mapObj);
             param1->unk_00++;
             return TRUE;
@@ -218,6 +227,33 @@ static u32 sub_02069D50(MapObject *mapObj)
     return v0;
 }
 
+// ENTRY P26/P27 (2026-10-01) added speed-dependent targeting here (first a single extra lookback step,
+// then a multi-entry position-history ring buffer) to make the follower's ACTUAL logical tile-by-tile
+// pathing lag further behind while the player runs. REVERTED in ENTRY P28 - the user reported it
+// overshot badly ("the mon now runs an entire square backward") and suggested a purely visual solution
+// instead of manipulating real pathing; see FollowerMon_RefreshVisualLag (src/follower_mon.c) for the
+// replacement, which offsets only the RENDERED position via MapObject_SetSpriteJumpOffset and never
+// touches this movement/pathing logic at all. This function is back to its original, unmodified form -
+// always targets PlayerAvatar_XPosPrev/ZPosPrev, a fixed 1-tile lag regardless of player speed.
+// ENTRY P87: the step the player is taking right now, read from the player's own MapObject. Scripted movement
+// (ApplyMovement LOCALID_PLAYER in cutscenes) sets only that, not PlayerAvatar's recorded action, which still holds
+// whatever the player last did with the D-pad. For D-pad movement both are the same value (PlayerAvatar_SetMovement).
+static u32 FollowerMon_GetPlayerStepAction(PlayerAvatar *playerAvatar, u32 fallback)
+{
+    u32 action = MapObject_GetMovementAction(PlayerAvatar_GetMapObject(playerAvatar));
+
+    if ((action >= MOVEMENT_ACTION_WALK_SLOWER_NORTH && action <= MOVEMENT_ACTION_WALK_FASTER_EAST)
+        || (action >= MOVEMENT_ACTION_WALK_FASTEST_NORTH && action <= MOVEMENT_ACTION_WALK_FASTEST_EAST)) {
+        return action;
+    }
+
+    if (action >= MOVEMENT_ACTION_RUN_NORTH && action <= MOVEMENT_ACTION_RUN_EAST) {
+        return action - MOVEMENT_ACTION_RUN_NORTH + MOVEMENT_ACTION_WALK_FAST_NORTH; // same mapping as sub_02069D50
+    }
+
+    return fallback;
+}
+
 static int sub_02069D8C(MapObject *mapObj)
 {
     FieldSystem *fieldSystem = MapObject_FieldSystem(mapObj);
@@ -229,6 +265,25 @@ static int sub_02069D8C(MapObject *mapObj)
 
     if (xCur != xPrev || zCur != zPrev) {
         u32 v6 = sub_02069D50(mapObj);
+
+        // ENTRY P87, follower Pokemon only (partner trainers keep vanilla logic):
+        if (MapObject_GetScript(mapObj) == FOLLOWER_MON_TALK_SCRIPT_ID) {
+            int dx = xPrev - xCur;
+            int dz = zPrev - zCur;
+
+            // More than one tile from where it should be (the player was moved while it was paused, or teleported
+            // within the map): walking there would cut through walls one step per player step, so it goes there.
+            if ((dx < 0 ? -dx : dx) + (dz < 0 ? -dz : dz) > 1) {
+                MapObject *playerObj = PlayerAvatar_GetMapObject(playerAvatar);
+
+                MapObject_SetPosDirFromCoords(mapObj, xPrev, MapObject_GetY(playerObj), zPrev, PlayerAvatar_GetFacingDir(playerAvatar));
+                return 0;
+            }
+
+            // Cutscenes: step at the speed the player is actually being moved at.
+            v6 = FollowerMon_GetPlayerStepAction(playerAvatar, v6);
+        }
+
         int dir = GetDirectionBetweenPoints(xCur, zCur, xPrev, zPrev);
 
         v6 = MovementAction_TurnActionTowardsDir(dir, v6);
@@ -238,6 +293,182 @@ static int sub_02069D8C(MapObject *mapObj)
     }
 
     return 0;
+}
+
+// ENTRY P64/P65: LEDGES. Vanilla Platinum (sub_02069D8C) gives the follower the player's own movement action aimed
+// at the player's previous tile, so a ledge jump (MOVEMENT_ACTION_JUMP_FAR_*, 2 tiles) was copied immediately: the
+// follower jumped 2 tiles from behind the player over flat ground and landed on the ledge (or 2 tiles sideways if
+// it was not straight behind), and its pathing stayed off afterwards.
+// Now (ENTRY P65, the behavior the user described): when the player jumps, the follower walks one tile (WALK_SLOW,
+// the 16 frames the jump takes, as HG's follower does) to the tile the player jumped from and waits at the top of
+// the ledge. When the player steps off the landing tile, the follower leaps the ledge itself (JUMP_FAR) onto that
+// landing tile - the tile the player just left - so it ends up one tile behind the player again. If the player's
+// next move is another ledge jump from the landing tile, the follower leaps onto the landing tile and waits at the
+// top of the new ledge.
+// ENTRY P64 got this wrong in two ways: it decided from the player's PREVIOUS tile, which MovementAction_Jump_Step1
+// resets to the landing tile when the jump ends (MapObject_UpdateCoords), so the catch-up fired as soon as the
+// player landed and sent the follower onto the player's own tile; and it crossed the ledge by walking.
+// Only for the follower Pokemon (identified by its talk script, ENTRY P63) - partner trainers keep vanilla logic.
+#define FOLLOWER_LEDGE_NOT_HANDLED -1
+
+static BOOL FollowerMon_IsActionInRow(u32 action, u32 northAction)
+{
+    return action >= northAction && action <= northAction + 3;
+}
+
+static BOOL FollowerMon_IsLedgeTile(FieldSystem *fieldSystem, int x, int z, int dir)
+{
+    u8 behavior = TerrainCollisionManager_GetTileBehavior(fieldSystem, x, z);
+
+    switch (dir) {
+    case DIR_NORTH:
+        return TileBehavior_IsJumpNorth(behavior);
+    case DIR_SOUTH:
+        return TileBehavior_IsJumpSouth(behavior);
+    case DIR_WEST:
+        return TileBehavior_IsJumpWest(behavior);
+    case DIR_EAST:
+        return TileBehavior_IsJumpEast(behavior);
+    }
+
+    return FALSE;
+}
+
+// ENTRY P66: HeartGold's follower leaps fast enough to be one tile behind the player as soon as the player is one
+// tile past the landing spot, walking or running. Pick the 2-tile leap that lasts exactly one player step.
+static u32 FollowerMon_GetLeapAction(u32 playerAction, int dir)
+{
+    u32 northAction;
+
+    if (FollowerMon_IsActionInRow(playerAction, MOVEMENT_ACTION_WALK_SLOWER_NORTH) || FollowerMon_IsActionInRow(playerAction, MOVEMENT_ACTION_WALK_SLOW_NORTH)) {
+        northAction = MOVEMENT_ACTION_JUMP_FAR_NORTH; // 16 frames, a slow step
+    } else if (FollowerMon_IsActionInRow(playerAction, MOVEMENT_ACTION_WALK_NORMAL_NORTH)) {
+        northAction = MOVEMENT_ACTION_FOLLOWER_LEAP_NORMAL_NORTH; // 8 frames
+    } else if (FollowerMon_IsActionInRow(playerAction, MOVEMENT_ACTION_WALK_FASTER_NORTH)) {
+        northAction = MOVEMENT_ACTION_FOLLOWER_LEAP_FASTER_NORTH; // 2 frames (cycling)
+    } else {
+        northAction = MOVEMENT_ACTION_FOLLOWER_LEAP_FAST_NORTH; // 4 frames (running; also any other step)
+    }
+
+    return northAction + dir;
+}
+
+static void FollowerMon_SetLedgePending(UnkStruct_02069CA8 *data, int dir, int startX, int startZ)
+{
+    data->ledgePending = TRUE;
+    data->ledgeDir = dir;
+    data->ledgeStartX = startX;
+    data->ledgeStartZ = startZ;
+}
+
+static int FollowerMon_TryLedgeFollow(MapObject *mapObj, UnkStruct_02069CA8 *data)
+{
+    if (MapObject_GetScript(mapObj) != FOLLOWER_MON_TALK_SCRIPT_ID) {
+        return FOLLOWER_LEDGE_NOT_HANDLED;
+    }
+
+    FieldSystem *fieldSystem = MapObject_FieldSystem(mapObj);
+    PlayerAvatar *playerAvatar = FieldSystem_GetPlayerAvatar(fieldSystem);
+    int xCur = MapObject_GetX(mapObj);
+    int zCur = MapObject_GetZ(mapObj);
+    int playerX = PlayerAvatar_GetXPos(playerAvatar);
+    int playerZ = PlayerAvatar_GetZPos(playerAvatar);
+    int xPrev = PlayerAvatar_XPosPrev(playerAvatar);
+    int zPrev = PlayerAvatar_ZPosPrev(playerAvatar);
+    u32 playerAction = sub_02069D50(mapObj);
+    BOOL playerJumping = FollowerMon_IsActionInRow(playerAction, MOVEMENT_ACTION_JUMP_FAR_NORTH);
+
+    if (data->ledgePending) {
+        int dir = data->ledgeDir;
+        int landX = data->ledgeStartX + MapObject_GetDxFromDir(dir) * 2;
+        int landZ = data->ledgeStartZ + MapObject_GetDzFromDir(dir) * 2;
+
+        // The player is still on (or just arriving at, via the jump's midpoint coordinate change) the landing
+        // tile: keep waiting at the top of the ledge.
+        if (playerX == landX && playerZ == landZ) {
+            return 0;
+        }
+
+        if (xCur == data->ledgeStartX && zCur == data->ledgeStartZ) {
+            sub_02065668(mapObj, FollowerMon_GetLeapAction(playerAction, dir));
+
+            // The player's next move was another ledge jump, starting from the landing tile: wait at its top.
+            if (playerJumping && xPrev == landX && zPrev == landZ) {
+                FollowerMon_SetLedgePending(data, PlayerAvatar_GetFacingDir(playerAvatar), landX, landZ);
+            } else {
+                data->ledgePending = FALSE;
+            }
+
+            return 1;
+        }
+
+        // Anything else (warp, scripted movement...) - drop the pending jump and follow normally.
+        data->ledgePending = FALSE;
+    }
+
+    if (playerJumping) {
+        int dir = PlayerAvatar_GetFacingDir(playerAvatar);
+        int startX, startZ;
+
+        // Find the tile the jump started from using the ledge tile, which works at every point of the jump: the
+        // player is on the ledge tile during the first half, past it (landing tile) from the midpoint on.
+        if (FollowerMon_IsLedgeTile(fieldSystem, playerX, playerZ, dir)) {
+            startX = playerX - MapObject_GetDxFromDir(dir);
+            startZ = playerZ - MapObject_GetDzFromDir(dir);
+        } else if (FollowerMon_IsLedgeTile(fieldSystem, playerX - MapObject_GetDxFromDir(dir), playerZ - MapObject_GetDzFromDir(dir), dir)) {
+            startX = playerX - MapObject_GetDxFromDir(dir) * 2;
+            startZ = playerZ - MapObject_GetDzFromDir(dir) * 2;
+        } else {
+            // A jump without a ledge tile (e.g. the Eterna Gym clock hands): seen at its start.
+            startX = xPrev;
+            startZ = zPrev;
+        }
+
+        FollowerMon_SetLedgePending(data, dir, startX, startZ);
+
+        if (xCur == startX && zCur == startZ) {
+            return 0;
+        }
+
+        // HG: one tile at WALK_SLOW toward the tile the player jumped from.
+        int moveDir = GetDirectionBetweenPoints(xCur, zCur, startX, startZ);
+        sub_02065668(mapObj, MovementAction_TurnActionTowardsDir(moveDir, MOVEMENT_ACTION_WALK_SLOW_NORTH));
+        return 1;
+    }
+
+    return FOLLOWER_LEDGE_NOT_HANDLED;
+}
+
+// ENTRY P87: TRUE while a follow-the-player object is taking a step, or has one to take (the player moved since the
+// object last looked - e.g. the same frame a trainer spots the player). Used by ScrCmd_LockAll/LockLastTalked.
+BOOL FollowerMon_IsStepPending(MapObject *mapObj)
+{
+    if (MapObject_IsMoving(mapObj)) {
+        return TRUE;
+    }
+
+    if (MapObject_GetMovementType(mapObj) != MOVEMENT_TYPE_FOLLOW_PLAYER) {
+        return FALSE;
+    }
+
+    UnkStruct_02069CA8 *data = sub_02062A78(mapObj);
+
+    if (data->unk_01 == 0) {
+        return FALSE;
+    }
+
+    return sub_02069CFC(mapObj, data) == 1;
+}
+
+static int FollowerMon_Follow(MapObject *mapObj, UnkStruct_02069CA8 *param1)
+{
+    int result = FollowerMon_TryLedgeFollow(mapObj, param1);
+
+    if (result != FOLLOWER_LEDGE_NOT_HANDLED) {
+        return result;
+    }
+
+    return sub_02069D8C(mapObj);
 }
 
 void sub_02069DF4(MapObject *mapObj)

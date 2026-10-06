@@ -3,7 +3,15 @@
 
 #include "struct_decls/map_object.h"
 
+#include "overlay005/field_effect_manager.h"
+
 #include "billboard.h"
+
+// ENTRY P87: HeartGold's follower Poke Ball release effect (renderer FIELD_EFFECT_RENDERER_FOLLOWER_BALL).
+void *FollowerBallRenderer_New(FieldEffectManager *fieldEffMan);
+void FollowerBallRenderer_Free(void *context);
+// Plays the release on the follower's tile and un-hides the follower when the ball opens (as HG does). Overlay 5 only.
+void FollowerMon_StartBallEffect(MapObject *mapObj);
 
 Billboard *ov5_021EB1A0(MapObject *param0);
 void ov5_021EB2EC(MapObject *param0);

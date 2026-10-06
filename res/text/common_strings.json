@@ -873,6 +873,13 @@
         "It will be fixed if you enter the\n",
         "Hall of Fame again.\r"
       ]
+    },
+    {
+      "id": "CommonStrings_Text_FollowerFeelingBetter",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is feeling better, so you\n",
+        "decided to take {STRVAR_1 1, 0, 0} with you!\r"
+      ]
     }
   ]
 }

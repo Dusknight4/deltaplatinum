@@ -339,3 +339,7 @@ res/prebuilt/resource/eng/frontier_graphic/frontier_obj.narc,/resource/eng/front
 res/prebuilt/resource/eng/scratch/scratch.narc,/resource/eng/scratch/scratch.narc
 res/words/word_bank.narc,/resource/eng/pms_aikotoba/pms_aikotoba.narc
 res/prebuilt/dwc/utility.bin,/dwc/utility.bin
+res/prebuilt/data/follower_talk/talk_cond.narc,/data/follower_talk_cond.narc
+res/prebuilt/data/follower_talk/talk_action.narc,/data/follower_talk_action.narc
+res/prebuilt/data/follower_talk/talk_anim.narc,/data/follower_talk_anim.narc
+res/prebuilt/data/follower_talk/talk_species.narc,/data/follower_talk_species.narc

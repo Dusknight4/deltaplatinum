@@ -782,6 +782,18 @@ BOOL (*const *const gMovementActionFuncs[MAX_MOVEMENT_ACTION])(MapObject *) = {
     [MOVEMENT_ACTION_151] = gMovementActionFuncs_151,
     [MOVEMENT_ACTION_152] = gMovementActionFuncs_152,
     [MOVEMENT_ACTION_153] = gMovementActionFuncs_153,
+    [MOVEMENT_ACTION_FOLLOWER_LEAP_NORMAL_NORTH] = gMovementActionFuncs_FollowerLeapNormalNorth,
+    [MOVEMENT_ACTION_FOLLOWER_LEAP_NORMAL_SOUTH] = gMovementActionFuncs_FollowerLeapNormalSouth,
+    [MOVEMENT_ACTION_FOLLOWER_LEAP_NORMAL_WEST] = gMovementActionFuncs_FollowerLeapNormalWest,
+    [MOVEMENT_ACTION_FOLLOWER_LEAP_NORMAL_EAST] = gMovementActionFuncs_FollowerLeapNormalEast,
+    [MOVEMENT_ACTION_FOLLOWER_LEAP_FAST_NORTH] = gMovementActionFuncs_FollowerLeapFastNorth,
+    [MOVEMENT_ACTION_FOLLOWER_LEAP_FAST_SOUTH] = gMovementActionFuncs_FollowerLeapFastSouth,
+    [MOVEMENT_ACTION_FOLLOWER_LEAP_FAST_WEST] = gMovementActionFuncs_FollowerLeapFastWest,
+    [MOVEMENT_ACTION_FOLLOWER_LEAP_FAST_EAST] = gMovementActionFuncs_FollowerLeapFastEast,
+    [MOVEMENT_ACTION_FOLLOWER_LEAP_FASTER_NORTH] = gMovementActionFuncs_FollowerLeapFasterNorth,
+    [MOVEMENT_ACTION_FOLLOWER_LEAP_FASTER_SOUTH] = gMovementActionFuncs_FollowerLeapFasterSouth,
+    [MOVEMENT_ACTION_FOLLOWER_LEAP_FASTER_WEST] = gMovementActionFuncs_FollowerLeapFasterWest,
+    [MOVEMENT_ACTION_FOLLOWER_LEAP_FASTER_EAST] = gMovementActionFuncs_FollowerLeapFasterEast,
 };
 
 static const int sMovementActionCodes_Face[] = {

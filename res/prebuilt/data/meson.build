@@ -1,3 +1,4 @@
+subdir('follower_talk')
 subdir('mmodel')
 subdir('sound')
 

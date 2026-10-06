@@ -11,6 +11,7 @@
 #include "generated/moves.h"
 #include "generated/species.h"
 
+#include "follower_mon_talk.h"
 #include "heap.h"
 #include "item.h"
 #include "move_table.h"
@@ -364,6 +365,7 @@ u8 Pokemon_ApplyItemEffects(Pokemon *mon, u16 itemId, u16 moveSlot, u16 location
 
     if (vApplyFriendship < LOW_FRIENDSHIP_LIMIT) {
         if (Item_Get(item, ITEM_PARAM_GIVE_FRIENDSHIP_LOW)) {
+            FollowerMonTalk_ApplyItemMood(mon, itemId); // ENTRY P64 (HG use_item_on_mon.c)
             if (UpdatePokemonFriendship(mon, vApplyFriendship, Item_Get(item, ITEM_PARAM_FRIENDSHIP_LOW), location, heapID) == 0) {
                 Heap_Free(item);
                 return effectApplied;
@@ -371,6 +373,7 @@ u8 Pokemon_ApplyItemEffects(Pokemon *mon, u16 itemId, u16 moveSlot, u16 location
         }
     } else if (vApplyFriendship >= LOW_FRIENDSHIP_LIMIT && vApplyFriendship < MED_FRIENDSHIP_LIMIT) {
         if (Item_Get(item, ITEM_PARAM_GIVE_FRIENDSHIP_MED)) {
+            FollowerMonTalk_ApplyItemMood(mon, itemId); // ENTRY P64 (HG use_item_on_mon.c)
             if (UpdatePokemonFriendship(mon, vApplyFriendship, Item_Get(item, ITEM_PARAM_FRIENDSHIP_MED), location, heapID) == 0) {
                 Heap_Free(item);
                 return effectApplied;
@@ -378,6 +381,7 @@ u8 Pokemon_ApplyItemEffects(Pokemon *mon, u16 itemId, u16 moveSlot, u16 location
         }
     } else if (vApplyFriendship >= MED_FRIENDSHIP_LIMIT && vApplyFriendship <= HIGH_FRIENDSHIP_LIMIT) {
         if (Item_Get(item, ITEM_PARAM_GIVE_FRIENDSHIP_HIGH)) {
+            FollowerMonTalk_ApplyItemMood(mon, itemId); // ENTRY P64 (HG use_item_on_mon.c)
             if (UpdatePokemonFriendship(mon, vApplyFriendship, Item_Get(item, ITEM_PARAM_FRIENDSHIP_HIGH), location, heapID) == 0) {
                 Heap_Free(item);
                 return effectApplied;

@@ -148,7 +148,25 @@ CommonScript_NurseHealPokemon:
     PlayPokecenterHealingAnimation VAR_0x8006
     ApplyMovement VAR_0x8007, CommonScript_Movement_NurseTurnToPlayer
     WaitMovement
+    FollowerMonHealBegin
     HealParty
+    Return
+
+@ ENTRY P87 (HG scr_seq_0003): if healing revived the Pokemon that now leads the party, the follower is swapped while
+@ the screen is black and appears behind the player: "<mon> is feeling better, so you decided to take <mon> with you!"
+CommonScript_FollowerMonFeelingBetter:
+    FollowerMonHealCheck VAR_0x8009
+    GoToIfEq VAR_0x8009, 255, CommonScript_FollowerMonFeelingBetterEnd
+    WaitTime 15, VAR_RESULT
+    FadeScreenOut
+    WaitFadeScreen
+    CloseMessage
+    FollowerMonHealRespawn
+    FadeScreenIn
+    WaitFadeScreen
+    BufferPartyMonNickname 0, VAR_0x8009
+    Message CommonStrings_Text_FollowerFeelingBetter
+CommonScript_FollowerMonFeelingBetterEnd:
     Return
 
 CommonScript_NurseFarewellAfterHeal:
@@ -158,6 +176,7 @@ CommonScript_NurseFarewellAfterHeal:
     WaitMovement
     SetPlayerState PLAYER_TRANSITION_WALKING
     ChangePlayerState
+    Call CommonScript_FollowerMonFeelingBetter
     ApplyMovement VAR_0x8007, CommonScript_Movement_NurseBow
     WaitMovement
     Message CommonStrings_Text_PokecenterHopeToSeeYouAgain1
@@ -173,6 +192,7 @@ CommonScript_NurseFarewellAfterHealGoldCard:
     WaitMovement
     SetPlayerState PLAYER_TRANSITION_WALKING
     ChangePlayerState
+    Call CommonScript_FollowerMonFeelingBetter
     ApplyMovement VAR_0x8007, CommonScript_Movement_NurseBow
     WaitMovement
     Message CommonStrings_Text_PokecenterHopeToSeeYouAgain2
@@ -193,6 +213,7 @@ CommonScript_NurseIdentifiedPokerus:
     WaitMovement
     SetPlayerState PLAYER_TRANSITION_WALKING
     ChangePlayerState
+    Call CommonScript_FollowerMonFeelingBetter
     Message CommonStrings_Text_PokecenterPokemonMayBeInfected
     WaitButton
     CloseMessage

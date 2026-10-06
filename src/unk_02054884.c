@@ -10,6 +10,7 @@
 
 #include "overlay005/daycare.h"
 
+#include "follower_mon_talk.h"
 #include "heap.h"
 #include "party.h"
 #include "pokemon.h"
@@ -197,6 +198,7 @@ int Pokemon_DoPoisonDamage(Party *party, u16 mapLabelTextID)
             if (hp == 1) {
                 numFainted++;
                 Pokemon_UpdateFriendship(mon, FRIENDSHIP_EVENT_POISON_SURVIVE, mapLabelTextID);
+                FollowerMonTalk_AddMoodForMon(mon, FOLLOWER_MOOD_SURVIVED_POISON); // ENTRY P64 (HG script_pokemon_util.c)
             }
 
             numPoisoned++;

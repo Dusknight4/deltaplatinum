@@ -6,6 +6,7 @@
 #include "struct_decls/map_object.h"
 
 #include "field/field_system.h"
+#include "generated/movement_types.h"
 #include "overlay005/field_effect_manager.h"
 
 #include "map_object.h"
@@ -238,6 +239,33 @@ static void ov5_021F1600(OverworldAnimManager *param0, void *param1)
     return;
 }
 
+// ENTRY P30 (2026-10-01): the shadow is a completely separate render path from the follower's own billboard
+// sprite (this whole file uses Simple3D/OverworldAnimManager, not Billboard) - both position-sync callbacks
+// below read the object's true, unmodified position via MapObject_GetPosPtr, deliberately NOT the jump-
+// offset-inclusive position ov5_021ECDA0 computes for the sprite (see src/overlay005/ov5_021ECC20.c:134-146)
+// - by design, so a shadow stays correctly grounded under a sprite doing a real vertical jump (e.g. the
+// ledge-hop/sink effects in src/unk_02069BE0.c, src/overlay009/ov9_02249960.c). The user asked for the
+// follower's shadow to lag behind the same way its sprite does, so this reuses the SAME horizontal
+// (x/z-only, never y) offset FollowerMon_ApplyVisualLag (src/overlay005/ov5_021EB1A0.c) already writes via
+// MapObject_SetSpriteJumpOffset - no duplicate distance/direction computation needed, and it automatically
+// stays in sync with any future tuning of that function. Scoped to MOVEMENT_TYPE_FOLLOW_PLAYER specifically,
+// not applied unconditionally to every shadow in the game, since some existing jump-offset users (e.g. the
+// Distortion World cascade sequence, ov9_02249960.c's EventCmdCascadeDown_CascadeDown) DO set a nonzero x
+// component for an unrelated bobbing effect during a cutscene this assistant cannot verify in-game - an
+// unconditional change here risked altering the player's own shadow during that sequence.
+static void ApplyFollowerShadowLag(const MapObject *mapObj, VecFx32 *pos)
+{
+    if (MapObject_GetMovementType(mapObj) != MOVEMENT_TYPE_FOLLOW_PLAYER) {
+        return;
+    }
+
+    VecFx32 jumpOffset;
+    MapObject_GetSpriteJumpOffset(mapObj, &jumpOffset);
+
+    pos->x += jumpOffset.x;
+    pos->z += jumpOffset.z;
+}
+
 static void ov5_021F1604(OverworldAnimManager *param0, void *param1)
 {
     UnkStruct_ov5_021F15B4 *v0 = param1;
@@ -264,6 +292,7 @@ static void ov5_021F1604(OverworldAnimManager *param0, void *param1)
         VecFx32 v2;
 
         MapObject_GetPosPtr(v1, &v2);
+        ApplyFollowerShadowLag(v1, &v2);
         OverworldAnimManager_SetPosition(param0, &v2);
     }
 }
@@ -336,6 +365,7 @@ static void ov5_021F1718(OverworldAnimManager *param0, void *param1)
         VecFx32 v2;
 
         MapObject_GetPosPtr(v1, &v2);
+        ApplyFollowerShadowLag(v1, &v2);
         OverworldAnimManager_SetPosition(param0, &v2);
     }
 }

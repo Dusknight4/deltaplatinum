@@ -202,6 +202,10 @@ static const char *sNarcPaths[] = {
     [NARC_INDEX_GRAPHIC__UNIONOBJ2D_ONLYFRONT] = "graphic/unionobj2d_onlyfront.narc",
     [NARC_INDEX_GRAPHIC__LIBRARY_TV] = "graphic/library_tv.narc",
     [NARC_INDEX_APPLICATION__ZUKANLIST__ZKN_DATA__ZUKAN_DATA_GIRA] = "application/zukanlist/zkn_data/zukan_data_gira.narc",
+    [NARC_INDEX_DATA__FOLLOWER_TALK_COND] = "data/follower_talk_cond.narc",
+    [NARC_INDEX_DATA__FOLLOWER_TALK_ACTION] = "data/follower_talk_action.narc",
+    [NARC_INDEX_DATA__FOLLOWER_TALK_ANIM] = "data/follower_talk_anim.narc",
+    [NARC_INDEX_DATA__FOLLOWER_TALK_SPECIES] = "data/follower_talk_species.narc",
 };
 
 static void ReadFromNarcMemberByPathAndIndex(void *dest, const char *path, int memberIndex, int offset, int bytesToRead);

@@ -975,6 +975,81 @@ static BOOL MovementAction_JumpFarEast_Step0(MapObject *mapObj)
     return TRUE;
 }
 
+// ENTRY P66: the follower Pokemon's ledge leap (src/unk_02069BE0.c FollowerMon_TryLedgeFollow). Two tiles, timed to
+// the player's step (8 frames walking, 4 running, 2 cycling) so that, as in HeartGold, the follower lands on the
+// ledge's landing tile exactly when the player arrives one tile past it. Same jump code as JumpFar.
+static BOOL MovementAction_FollowerLeapNormalNorth_Step0(MapObject *mapObj)
+{
+    MovementAction_InitJump(mapObj, DIR_NORTH, FX32_CONST(4), 8, MAP_OBJ_UNK_A0_03, JUMP_HEIGHT_HIGH, 0x200);
+    return TRUE;
+}
+
+static BOOL MovementAction_FollowerLeapNormalSouth_Step0(MapObject *mapObj)
+{
+    MovementAction_InitJump(mapObj, DIR_SOUTH, FX32_CONST(4), 8, MAP_OBJ_UNK_A0_03, JUMP_HEIGHT_HIGH, 0x200);
+    return TRUE;
+}
+
+static BOOL MovementAction_FollowerLeapNormalWest_Step0(MapObject *mapObj)
+{
+    MovementAction_InitJump(mapObj, DIR_WEST, FX32_CONST(4), 8, MAP_OBJ_UNK_A0_03, JUMP_HEIGHT_HIGH, 0x200);
+    return TRUE;
+}
+
+static BOOL MovementAction_FollowerLeapNormalEast_Step0(MapObject *mapObj)
+{
+    MovementAction_InitJump(mapObj, DIR_EAST, FX32_CONST(4), 8, MAP_OBJ_UNK_A0_03, JUMP_HEIGHT_HIGH, 0x200);
+    return TRUE;
+}
+
+static BOOL MovementAction_FollowerLeapFastNorth_Step0(MapObject *mapObj)
+{
+    MovementAction_InitJump(mapObj, DIR_NORTH, FX32_CONST(8), 4, MAP_OBJ_UNK_A0_03, JUMP_HEIGHT_HIGH, 0x400);
+    return TRUE;
+}
+
+static BOOL MovementAction_FollowerLeapFastSouth_Step0(MapObject *mapObj)
+{
+    MovementAction_InitJump(mapObj, DIR_SOUTH, FX32_CONST(8), 4, MAP_OBJ_UNK_A0_03, JUMP_HEIGHT_HIGH, 0x400);
+    return TRUE;
+}
+
+static BOOL MovementAction_FollowerLeapFastWest_Step0(MapObject *mapObj)
+{
+    MovementAction_InitJump(mapObj, DIR_WEST, FX32_CONST(8), 4, MAP_OBJ_UNK_A0_03, JUMP_HEIGHT_HIGH, 0x400);
+    return TRUE;
+}
+
+static BOOL MovementAction_FollowerLeapFastEast_Step0(MapObject *mapObj)
+{
+    MovementAction_InitJump(mapObj, DIR_EAST, FX32_CONST(8), 4, MAP_OBJ_UNK_A0_03, JUMP_HEIGHT_HIGH, 0x400);
+    return TRUE;
+}
+
+static BOOL MovementAction_FollowerLeapFasterNorth_Step0(MapObject *mapObj)
+{
+    MovementAction_InitJump(mapObj, DIR_NORTH, FX32_CONST(16), 2, MAP_OBJ_UNK_A0_03, JUMP_HEIGHT_HIGH, 0x800);
+    return TRUE;
+}
+
+static BOOL MovementAction_FollowerLeapFasterSouth_Step0(MapObject *mapObj)
+{
+    MovementAction_InitJump(mapObj, DIR_SOUTH, FX32_CONST(16), 2, MAP_OBJ_UNK_A0_03, JUMP_HEIGHT_HIGH, 0x800);
+    return TRUE;
+}
+
+static BOOL MovementAction_FollowerLeapFasterWest_Step0(MapObject *mapObj)
+{
+    MovementAction_InitJump(mapObj, DIR_WEST, FX32_CONST(16), 2, MAP_OBJ_UNK_A0_03, JUMP_HEIGHT_HIGH, 0x800);
+    return TRUE;
+}
+
+static BOOL MovementAction_FollowerLeapFasterEast_Step0(MapObject *mapObj)
+{
+    MovementAction_InitJump(mapObj, DIR_EAST, FX32_CONST(16), 2, MAP_OBJ_UNK_A0_03, JUMP_HEIGHT_HIGH, 0x800);
+    return TRUE;
+}
+
 static BOOL MovementAction_JumpNearSlowWest_Step0(MapObject *mapObj)
 {
     MovementAction_InitJump(mapObj, DIR_WEST, FX32_CONST(1), 16, MAP_OBJ_UNK_A0_09, JUMP_HEIGHT_HIGH, 0xF0);
@@ -2385,6 +2460,78 @@ BOOL (*const gMovementActionFuncs_JumpFarWest[])(MapObject *) = {
 
 BOOL (*const gMovementActionFuncs_JumpFarEast[])(MapObject *) = {
     MovementAction_JumpFarEast_Step0,
+    MovementAction_Jump_Step1,
+    MovementAction_End,
+};
+
+BOOL (*const gMovementActionFuncs_FollowerLeapNormalNorth[])(MapObject *) = {
+    MovementAction_FollowerLeapNormalNorth_Step0,
+    MovementAction_Jump_Step1,
+    MovementAction_End,
+};
+
+BOOL (*const gMovementActionFuncs_FollowerLeapNormalSouth[])(MapObject *) = {
+    MovementAction_FollowerLeapNormalSouth_Step0,
+    MovementAction_Jump_Step1,
+    MovementAction_End,
+};
+
+BOOL (*const gMovementActionFuncs_FollowerLeapNormalWest[])(MapObject *) = {
+    MovementAction_FollowerLeapNormalWest_Step0,
+    MovementAction_Jump_Step1,
+    MovementAction_End,
+};
+
+BOOL (*const gMovementActionFuncs_FollowerLeapNormalEast[])(MapObject *) = {
+    MovementAction_FollowerLeapNormalEast_Step0,
+    MovementAction_Jump_Step1,
+    MovementAction_End,
+};
+
+BOOL (*const gMovementActionFuncs_FollowerLeapFastNorth[])(MapObject *) = {
+    MovementAction_FollowerLeapFastNorth_Step0,
+    MovementAction_Jump_Step1,
+    MovementAction_End,
+};
+
+BOOL (*const gMovementActionFuncs_FollowerLeapFastSouth[])(MapObject *) = {
+    MovementAction_FollowerLeapFastSouth_Step0,
+    MovementAction_Jump_Step1,
+    MovementAction_End,
+};
+
+BOOL (*const gMovementActionFuncs_FollowerLeapFastWest[])(MapObject *) = {
+    MovementAction_FollowerLeapFastWest_Step0,
+    MovementAction_Jump_Step1,
+    MovementAction_End,
+};
+
+BOOL (*const gMovementActionFuncs_FollowerLeapFastEast[])(MapObject *) = {
+    MovementAction_FollowerLeapFastEast_Step0,
+    MovementAction_Jump_Step1,
+    MovementAction_End,
+};
+
+BOOL (*const gMovementActionFuncs_FollowerLeapFasterNorth[])(MapObject *) = {
+    MovementAction_FollowerLeapFasterNorth_Step0,
+    MovementAction_Jump_Step1,
+    MovementAction_End,
+};
+
+BOOL (*const gMovementActionFuncs_FollowerLeapFasterSouth[])(MapObject *) = {
+    MovementAction_FollowerLeapFasterSouth_Step0,
+    MovementAction_Jump_Step1,
+    MovementAction_End,
+};
+
+BOOL (*const gMovementActionFuncs_FollowerLeapFasterWest[])(MapObject *) = {
+    MovementAction_FollowerLeapFasterWest_Step0,
+    MovementAction_Jump_Step1,
+    MovementAction_End,
+};
+
+BOOL (*const gMovementActionFuncs_FollowerLeapFasterEast[])(MapObject *) = {
+    MovementAction_FollowerLeapFasterEast_Step0,
     MovementAction_Jump_Step1,
     MovementAction_End,
 };

@@ -39,6 +39,7 @@
 #include "enums.h"
 #include "field_battle_data_transfer.h"
 #include "flags.h"
+#include "follower_mon_talk.h"
 #include "font.h"
 #include "font_special_chars.h"
 #include "game_options.h"
@@ -752,6 +753,10 @@ BOOL BattleSystem_UseBagItem(BattleSystem *battleSys, int battler, int partySlot
         if (selectedSlot == partySlot || targetSlot == partySlot) {
             Battler_AddVal(battleCtx, battler, BATTLEMON_FRIENDSHIP, friendship);
         }
+    }
+
+    if (result == TRUE) {
+        FollowerMonTalk_ApplyItemMood(mon, item); // ENTRY P64 (HG battle_system.c)
     }
 
     return result;

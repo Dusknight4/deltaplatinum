@@ -845,6 +845,11 @@ ScriptCommand(SCRCMD_BUFFERTRAINERCLASSNAMEWITHARTICLE,                    ScrCm
 ScriptCommand(SCRCMD_BUFFERBALLSEALNAMEPLURAL,                             ScrCmd_BufferBallSealNamePlural)
 ScriptCommand(SCRCMD_CAPITALIZEFIRSTLETTER,                                ScrCmd_CapitalizeFirstLetter)
 ScriptCommand(SCRCMD_BUFFERFLOORNUMBER,                                    ScrCmd_BufferFloorNumber)
+ScriptCommand(SCRCMD_FOLLOWERMONTALK,                                      ScrCmd_FollowerMonTalk) // ENTRY P63
+ScriptCommand(SCRCMD_FOLLOWERMONFIELDMOVE,                                 ScrCmd_FollowerMonFieldMove) // ENTRY P64
+ScriptCommand(SCRCMD_FOLLOWERMONHEALBEGIN,                                 ScrCmd_FollowerMonHealBegin) // ENTRY P87
+ScriptCommand(SCRCMD_FOLLOWERMONHEALCHECK,                                 ScrCmd_FollowerMonHealCheck) // ENTRY P87
+ScriptCommand(SCRCMD_FOLLOWERMONHEALRESPAWN,                               ScrCmd_FollowerMonHealRespawn) // ENTRY P87
 
 // clang-format on
 

@@ -13,6 +13,7 @@ void sub_02069E1C(MapObject *param0);
 void sub_02069E4C(MapObject *param0);
 void sub_02069E50(MapObject *param0);
 MapObject *sub_02069EB8(MapObject *param0);
+BOOL FollowerMon_IsStepPending(MapObject *mapObj); // ENTRY P87
 void sub_0206A104(MapObject *param0);
 void sub_0206A110(MapObject *param0);
 void sub_0206A11C(MapObject *param0);

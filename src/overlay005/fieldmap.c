@@ -55,6 +55,7 @@
 #include "field_overworld_state.h"
 #include "field_system.h"
 #include "field_task.h"
+#include "follower_mon.h"
 #include "game_overlay.h"
 #include "graphics.h"
 #include "gx_layers.h"
@@ -246,6 +247,17 @@ static BOOL FieldMap_Main(ApplicationManager *appMan, int *param1)
 {
     FieldSystem *fieldSystem = ApplicationManager_Args(appMan);
 
+    // FOLLOWER LEADER-SWAP SYNC + COLOR MOD: both re-applied every field frame, independent of player
+    // movement, so a party-leader swap via the menu (or a faint, evolution, trade, catch, etc.) takes
+    // effect immediately - including while standing still - rather than waiting for the next map
+    // transition. FollowerMon_Refresh now updates an existing follower's species in place instead of only
+    // creating one when none exists (see its own comment, src/follower_mon.c). See
+    // FollowerMon_RefreshPalette's own header comment for why this must be called from overlay5-resident
+    // code specifically.
+    FollowerMon_Refresh(fieldSystem);
+    FollowerMon_RefreshPalette(fieldSystem);
+    FollowerMon_UpdateRelease(fieldSystem); // ENTRY P87: out of its Poke Ball once the player leaves the arrival tile
+
     if (FieldSystem_UpdateLocationToPlayerPosition(fieldSystem)) {
         BerryPatches_UpdateGrowthStates(fieldSystem);
         ov5_021D13B4(fieldSystem);
@@ -421,6 +433,15 @@ static BOOL FieldMap_ChangeZone(FieldSystem *fieldSystem)
 
     sub_0206184C(fieldSystem->mapObjMan, oldMapHeaderID, newMapHeaderID, objEventCount, objEventList);
 
+    // FOLLOWER MON (fix): this is the seamless "walked from one matrix-connected map straight into the
+    // next" zone transition (e.g. Twinleaf Town -> Route 201) - distinct from a warp/fade map change, which
+    // already re-spawns the follower via FieldMapChange_CreateObjects/_LoadObjects (src/field_map_change.c).
+    // sub_0206184C above re-syncs mapObjMan's object-event objects for the new zone, which discards the
+    // follower's dynamically-spawned MapObject (it isn't part of either map's static object-event data), so
+    // without this call the follower silently vanished on exactly this kind of transition and never came
+    // back until the next full map change.
+    FollowerMon_Refresh(fieldSystem);
+
     RadarChain_Clear(fieldSystem->chain);
     FieldBGM_TryFadeOut(fieldSystem, FieldBGM_GetEffective(fieldSystem, fieldSystem->location->mapHeaderID), 1);
     sub_0203A418(fieldSystem);
@@ -459,6 +480,10 @@ void FieldMap_ChangeZoneDistortionWorld(FieldSystem *fieldSystem, enum MapHeader
     const ObjectEvent *objEventList = MapHeaderData_GetObjectEvents(fieldSystem);
 
     sub_0206184C(fieldSystem->mapObjMan, oldMapHeaderID, mapHeaderID, objEventCount, objEventList);
+
+    // FOLLOWER MON (fix): same reasoning as the identical call in FieldMap_ChangeZone above, for the
+    // Distortion World's own zone-transition path.
+    FollowerMon_Refresh(fieldSystem);
 
     FieldBGM_TryFadeOut(fieldSystem, FieldBGM_GetEffective(fieldSystem, fieldSystem->location->mapHeaderID), 1);
     sub_0203A418(fieldSystem);

@@ -38,6 +38,8 @@
 #include "field_comm_manager.h"
 #include "field_map_change.h"
 #include "field_overworld_state.h"
+#include "follower_mon.h"
+#include "follower_mon_talk.h"
 #include "game_records.h"
 #include "inlines.h"
 #include "item_use_functions.h"
@@ -191,6 +193,16 @@ BOOL FieldInput_Process(const FieldInput *input, FieldSystem *fieldSystem)
 
             PlayerAvatar_ClearMoveState(fieldSystem->playerAvatar);
             MapObjectMan_PauseAllMovement(fieldSystem->mapObjMan);
+
+            // ENTRY P87 (HG FieldInput_Process): the player is spotted at the start of a step, before the follower
+            // Pokemon has started its own - leave it unpaused so it catches up during the "!" and the trainer's walk
+            // instead of staying a tile further back until the battle ends. ScrCmd_LockAll waits for that step.
+            MapObject *followerMon = FollowerMon_GetMapObject(fieldSystem);
+
+            if (followerMon != NULL) {
+                MapObject_SetPauseMovementOff(followerMon);
+            }
+
             return TRUE;
         }
     }
@@ -731,6 +743,7 @@ static BOOL Field_ProcessStep(FieldSystem *fieldSystem)
     }
 
     FieldSystem_SendPoketchEvent(fieldSystem, POKETCH_EVENT_PEDOMETER, 1);
+    FollowerMonTalk_OnPlayerStep(fieldSystem); // ENTRY P63: HG follower mood decays 1 toward 0 per step
 
     if (Field_UpdatePoison(fieldSystem) == TRUE) {
         return TRUE;

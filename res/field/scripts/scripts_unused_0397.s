@@ -10,7 +10,19 @@
     ScriptEntry Unused397_Dummy6
     ScriptEntry Unused397_Dummy7
     ScriptEntry Unused397_Dummy8
+    ScriptEntry FollowerMonTalk_Script
     ScriptEntryEnd
+
+// ENTRY P63: talking to the follower Pokemon (script ID 9908 = FOLLOWER_MON_TALK_SCRIPT_ID in
+// include/follower_mon_talk.h). Same sequence as HeartGold's scr_seq_0163: sound, LockAll, face the
+// player, the reaction itself (src/follower_mon_talk.c), ReleaseAll.
+FollowerMonTalk_Script:
+    PlaySE SE_CONFIRM_sseq_3
+    LockAll
+    FacePlayer
+    FollowerMonTalk
+    ReleaseAll
+    End
 
 Unused397_Dummy1:
     SetFlag FLAG_HIDE_ROARK_UNDERGROUND

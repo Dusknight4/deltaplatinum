@@ -4995,6 +4995,38 @@
     .byte \floor
     .endm
 
+    // ENTRY P63: HeartGold-style follower Pokemon reaction (src/follower_mon_talk.c)
+    .macro FollowerMonTalk
+    .short SCRCMD_FOLLOWERMONTALK
+    .endm
+
+    // ENTRY P64: replaces PlayHMCutIn for Cut/Rock Smash/Strength/Flash. If the Pokemon in partySlot is the
+    // follower (HG scr_seq_0146), it reacts instead: mood + moodAmount, hops (2 + mood +1 if it has moveType,
+    // else 1), cry. Otherwise plays the normal HM cut-in.
+    .macro FollowerMonFieldMove partySlot, moodAmount, moveType
+    .short SCRCMD_FOLLOWERMONFIELDMOVE
+    .short \partySlot
+    .byte \moodAmount
+    .byte \moveType
+    .endm
+
+    // ENTRY P87: Pokemon Center heal, HG scr_seq_0003 (src/follower_mon.c). Begin before HealParty keeps the follower
+    // on the current lead; Check after HealParty puts the new lead's party slot in destVar if the lead changed and it
+    // can walk with the player here (else 0xFF, and the follower updates normally); Respawn (screen black) puts the
+    // new lead's follower on the tile behind the player.
+    .macro FollowerMonHealBegin
+    .short SCRCMD_FOLLOWERMONHEALBEGIN
+    .endm
+
+    .macro FollowerMonHealCheck destVar
+    .short SCRCMD_FOLLOWERMONHEALCHECK
+    .short \destVar
+    .endm
+
+    .macro FollowerMonHealRespawn
+    .short SCRCMD_FOLLOWERMONHEALRESPAWN
+    .endm
+
 
 
     .macro GoToIfLt varID, valueOrVarID, offset

@@ -98,6 +98,8 @@ void Billboard_Reset(Billboard *billboard)
     billboard->prev = NULL;
     billboard->draw = FALSE;
     billboard->callback = NULL;
+    billboard->postDrawCallback = NULL;
+    billboard->postDrawCallbackParam = NULL;
 }
 
 void BillboardLists_Create(int count, enum HeapID heapID)
@@ -267,6 +269,11 @@ static void BillboardList_Draw(BillboardList *list)
             }
 
             Easy3D_DrawRenderObj(&billboard->renderObj, &billboard->pos, rotMatrix, &billboard->scale);
+
+            if (billboard->postDrawCallback != NULL) {
+                billboard->postDrawCallback(billboard, billboard->postDrawCallbackParam);
+            }
+
             ReleaseVRAMKeysAndModelSet(billboard);
         }
 
@@ -653,6 +660,63 @@ void Billboard_SetCallback(Billboard *billboard, BillboardCallback callback, voi
 {
     billboard->callbackParam = callbackParam;
     billboard->callback = callback;
+}
+
+// ENTRY P73: the post-draw callback runs inside BillboardList_Draw right after this billboard is drawn, while its
+// texture is still bound to its model, so it can call Billboard_RedrawWithProjection.
+void Billboard_SetPostDrawCallback(Billboard *billboard, BillboardCallback callback, void *callbackParam)
+{
+    billboard->postDrawCallbackParam = callbackParam;
+    billboard->postDrawCallback = callback;
+}
+
+// ENTRY P73: draws the billboard a second time, exactly as BillboardList_Draw just did, but with the given projection
+// matrix, then puts the original projection back (NNS_G3dGlbFlush reloads it into the geometry engine right away).
+// Only valid from a post-draw callback.
+void Billboard_RedrawWithProjection(Billboard *billboard, const MtxFx44 *projection)
+{
+    MtxFx44 savedProjection = *NNS_G3dGlbGetProjectionMtx();
+    MtxFx33 identityMatrix;
+    const MtxFx33 *rotMatrix = billboard->rotMatrix;
+
+    if (rotMatrix == NULL) {
+        MTX_Identity33(&identityMatrix);
+        rotMatrix = &identityMatrix;
+    }
+
+    NNS_G3dGlbSetProjectionMtx(projection);
+    Easy3D_DrawRenderObj(&billboard->renderObj, &billboard->pos, rotMatrix, &billboard->scale);
+    NNS_G3dGlbSetProjectionMtx(&savedProjection);
+    NNS_G3dGlbFlush();
+}
+
+// ENTRY P74: draws ANOTHER billboard than `current` (whose post-draw callback is running) with the given projection,
+// the way BillboardList_Draw would: pre-draw callback, texture bind, current animation frame, release. Skipped if it is
+// hidden, not set up yet, or uses the model set that is bound for `current` right now.
+// ENTRY P75: billboards that stream their animation frames into their own VRAM slot (AllocResourcesAndAppendBillboard
+// - the player's sprite is one) stay in BILLBOARD_STATE_VRAM_TRANSFER for good and never become ACTIVE; P74 only
+// accepted ACTIVE, so the player's pass was never drawn. Both states draw, exactly as in BillboardList_Draw: the bind
+// points a VRAM_TRANSFER billboard at its own slot (whose frame its own draw requests), an ACTIVE one also needs its
+// current frame's texture/palette addresses.
+void Billboard_DrawOtherWithProjection(Billboard *billboard, const Billboard *current, const MtxFx44 *projection)
+{
+    if (billboard == NULL || billboard == current || billboard->draw != TRUE || billboard->modelSet == current->modelSet
+        || (billboard->state != BILLBOARD_STATE_ACTIVE && billboard->state != BILLBOARD_STATE_VRAM_TRANSFER)) {
+        return;
+    }
+
+    if (billboard->callback != NULL) {
+        billboard->callback(billboard, billboard->callbackParam);
+    }
+
+    Billboard_SetKeysAndBindModelSet(billboard);
+
+    if (billboard->state == BILLBOARD_STATE_ACTIVE) {
+        UpdateTexPlttAddressesForCurrentFrame(billboard);
+    }
+
+    Billboard_RedrawWithProjection(billboard, projection);
+    ReleaseVRAMKeysAndModelSet(billboard);
 }
 
 static void UpdateTexPlttAddressesForCurrentFrame(Billboard *billboard)

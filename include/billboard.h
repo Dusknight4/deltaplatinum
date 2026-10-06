@@ -49,6 +49,10 @@ typedef struct Billboard {
     fx32 frameNum;
     Billboard *next;
     Billboard *prev;
+    // ENTRY P73: optional second callback, run right after the billboard is drawn while its texture is still bound
+    // (see Billboard_RedrawWithProjection). Added at the end so no existing field moves.
+    BillboardCallback postDrawCallback;
+    void *postDrawCallbackParam;
 } Billboard;
 
 typedef struct BillboardList {
@@ -134,5 +138,8 @@ NNSG3dResMdl *Billboard_GetModel2(Billboard *billboard);
 NNSG3dResTex *Billboard_GetTexture(Billboard *billboard);
 NNSG3dRenderObj *Billboard_GetRenderObj(Billboard *billboard);
 void Billboard_SetCallback(Billboard *billboard, BillboardCallback callback, void *callbackParam);
+void Billboard_SetPostDrawCallback(Billboard *billboard, BillboardCallback callback, void *callbackParam);
+void Billboard_RedrawWithProjection(Billboard *billboard, const MtxFx44 *projection);
+void Billboard_DrawOtherWithProjection(Billboard *billboard, const Billboard *current, const MtxFx44 *projection);
 
 #endif // POKEPLATINUM_BILLBOARD_H

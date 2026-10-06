@@ -1,0 +1,4664 @@
+{
+  "key": 27195,
+  "messages": [
+    {
+      "id": "FollowerTalk_Text_0000",
+      "en_US": [
+        "Huh?\n",
+        "{STRVAR_1 1, 0, 0} is holding something...\r",
+        "Would you like to take it?{YESNO 0}"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0001",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems happy to have found\n",
+        "something!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0002",
+      "en_US": [
+        "Oh!\n",
+        "It seems just too important to let go!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0003",
+      "en_US": "{STRVAR_1 1, 0, 0} happily handed it over!"
+    },
+    {
+      "id": "FollowerTalk_Text_0004",
+      "en_US": [
+        "..................\n",
+        "Oh?\r",
+        "{STRVAR_1 1, 0, 0} is holding some kind of\n",
+        "strange, Shiny Leaf..."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0005",
+      "en_US": "It’s facing this way and nodding."
+    },
+    {
+      "id": "FollowerTalk_Text_0006",
+      "en_US": [
+        "A strange sound is coming from\n",
+        "{STRVAR_1 1, 0, 0}..."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0007",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is growling in a way that\n",
+        "sounds almost like speech..."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0008",
+      "en_US": [
+        "Hm? It seems like it heard roaring in\n",
+        "the distance!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0009",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} almost forgot that it was\n",
+        "holding that {STRVAR_1 8, 4, 0}!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0010",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} nudged {STRVAR_1 3, 2, 0}!\f",
+        "Nudge it back?{YESNO 0}"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0011",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is touching things\n",
+        "all over the place..."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0012",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is keeping close to your\n",
+        "feet."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0013",
+      "en_US": "{STRVAR_1 1, 0, 0} suddenly flew into a rage!"
+    },
+    {
+      "id": "FollowerTalk_Text_0014",
+      "en_US": "{STRVAR_1 1, 0, 0} jumped in surprise!"
+    },
+    {
+      "id": "FollowerTalk_Text_0015",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} looks a little\n",
+        "downhearted..."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0016",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is heading this way with\n",
+        "something in its mouth.\f",
+        "Take the item out of its mouth?{YESNO 0}"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0017",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is snuggling up, shivering\n",
+        "with cold!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0018",
+      "en_US": "{STRVAR_1 1, 0, 0} is really happy!"
+    },
+    {
+      "id": "FollowerTalk_Text_0019",
+      "en_US": "{STRVAR_1 1, 0, 0} seems a little relieved!"
+    },
+    {
+      "id": "FollowerTalk_Text_0020",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems very happy to be\n",
+        "so close!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0021",
+      "en_US": "{STRVAR_1 1, 0, 0} just looks so very happy!"
+    },
+    {
+      "id": "FollowerTalk_Text_0022",
+      "en_US": "{STRVAR_1 1, 0, 0} is very excited!"
+    },
+    {
+      "id": "FollowerTalk_Text_0023",
+      "en_US": "{STRVAR_1 1, 0, 0} jumped a little!"
+    },
+    {
+      "id": "FollowerTalk_Text_0024",
+      "en_US": "{STRVAR_1 1, 0, 0} is very happy!"
+    },
+    {
+      "id": "FollowerTalk_Text_0025",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems to be a bit\n",
+        "nervous...\f",
+        "Would you like to say something?{YESNO 0}"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0026",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} was surprised and stopped\n",
+        "playing pranks!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0027",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is following you very\n",
+        "closely!\f",
+        "Want to give it a pat?{YESNO 0}"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0028",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is paying close attention\n",
+        "to its surroundings!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0029",
+      "en_US": "{STRVAR_1 1, 0, 0} seems very satisfied!"
+    },
+    {
+      "id": "FollowerTalk_Text_0030",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} was not paying attention\n",
+        "and ran headfirst into you!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0031",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems to want to play and\n",
+        "is gazing at you expectantly.\f",
+        "Will you give in? {YESNO 0}"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0032",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} suddenly pushed you!\n",
+        "Will you scold it?{YESNO 0}"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0033",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems to be nodding\n",
+        "off... Call out its name? {YESNO 0}"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0034",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is facing you with a\n",
+        "blank expression."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0035",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is rolling around in a\n",
+        "thicket, and there are\f",
+        "leaves all over! Prop it up? {YESNO 0}"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0036",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} suddenly got very close\n",
+        "to you!\f",
+        "Want to show it some affection?{YESNO 0}"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0037",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is blankly staring in this\n",
+        "direction...\f",
+        "Want to call its name?{YESNO 0}"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0038",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} looks like it wants to\n",
+        "lead!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0039",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} wants attention now!\n",
+        "Want to play along?{YESNO 0}"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0040",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems a bit uneasy and\n",
+        "is shuffling around nervously.\f",
+        "Say something reassuring?{YESNO 0}"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0041",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems to be lost in a\n",
+        "daydream.\f",
+        "Call out to it?{YESNO 0}"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0042",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems to want to return\n",
+        "to the Lab."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0043",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} suddenly started walking\n",
+        "closer!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0044",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is chewing on\n",
+        "your shoes! Scold it? {YESNO 0}"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0045",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0}’s leaf is drooping\n",
+        "slightly."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0046",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0}’s cheeks are becoming\n",
+        "rosy!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0047",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems to be having\n",
+        "difficulty moving its body!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0048",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is steadily keeping up\n",
+        "with you!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0049",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems to want to play with\n",
+        "{STRVAR_1 3, 2, 0}!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0050",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is regarding you with\n",
+        "adoration!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0051",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is doing its best to keep\n",
+        "up with you!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0052",
+      "en_US": "{STRVAR_1 1, 0, 0} is jumping for joy!"
+    },
+    {
+      "id": "FollowerTalk_Text_0053",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is happily cuddling up to\n",
+        "you!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0054",
+      "en_US": "{STRVAR_1 1, 0, 0} looks very happy!"
+    },
+    {
+      "id": "FollowerTalk_Text_0055",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems to be feeling great\n",
+        "about walking with you!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0056",
+      "en_US": "{STRVAR_1 1, 0, 0} put in extra effort!"
+    },
+    {
+      "id": "FollowerTalk_Text_0057",
+      "en_US": "{STRVAR_1 1, 0, 0} spun around in a circle!"
+    },
+    {
+      "id": "FollowerTalk_Text_0058",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is focusing its attention\n",
+        "on you."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0059",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} turned to face you\n",
+        "and smiled!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0060",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is showing off its\n",
+        "agility!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0061",
+      "en_US": "{STRVAR_1 1, 0, 0} is happily skipping about!"
+    },
+    {
+      "id": "FollowerTalk_Text_0062",
+      "en_US": "{STRVAR_1 1, 0, 0} seems to be very happy!"
+    },
+    {
+      "id": "FollowerTalk_Text_0063",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is jumping around in a\n",
+        "carefree way!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0064",
+      "en_US": "{STRVAR_1 1, 0, 0} is moving around happily!"
+    },
+    {
+      "id": "FollowerTalk_Text_0065",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is staring straight in this\n",
+        "direction!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0066",
+      "en_US": "{STRVAR_1 1, 0, 0} turned its gaze away..."
+    },
+    {
+      "id": "FollowerTalk_Text_0067",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is poking at\n",
+        "{STRVAR_1 3, 2, 0}’s Bag!\f",
+        "Scold it?{YESNO 0}"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0068",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is staring straight into\n",
+        "{STRVAR_1 3, 2, 0}’s eyes."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0069",
+      "en_US": "{STRVAR_1 1, 0, 0} beamed happily at you!"
+    },
+    {
+      "id": "FollowerTalk_Text_0070",
+      "en_US": "{STRVAR_1 1, 0, 0} greeted your foe!"
+    },
+    {
+      "id": "FollowerTalk_Text_0071",
+      "en_US": "{STRVAR_1 1, 0, 0} cried out!"
+    },
+    {
+      "id": "FollowerTalk_Text_0072",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} faced your opponent and\n",
+        "cried out loudly!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0073",
+      "en_US": "{STRVAR_1 1, 0, 0} is intimidating your foe!"
+    },
+    {
+      "id": "FollowerTalk_Text_0074",
+      "en_US": "{STRVAR_1 1, 0, 0} is glaring at your foe!"
+    },
+    {
+      "id": "FollowerTalk_Text_0075",
+      "en_US": "{STRVAR_1 1, 0, 0} is staring at your foe!"
+    },
+    {
+      "id": "FollowerTalk_Text_0076",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems very interested in\n",
+        "Amphy!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0077",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems to want to play with\n",
+        "Amphy!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0078",
+      "en_US": "{STRVAR_1 1, 0, 0} greeted Amphy!"
+    },
+    {
+      "id": "FollowerTalk_Text_0079",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems interested in\n",
+        "Amphy..."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0080",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} started to yawn...\n",
+        "...is almost yawning...almost...\f",
+        "Never mind."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0081",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is gazing at the morning\n",
+        "sun..."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0082",
+      "en_US": "{STRVAR_1 1, 0, 0} snapped at your legs!"
+    },
+    {
+      "id": "FollowerTalk_Text_0083",
+      "en_US": "{STRVAR_1 1, 0, 0} is nipping at your feet!"
+    },
+    {
+      "id": "FollowerTalk_Text_0084",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} chewed on your feet!\n",
+        "Scold it?{YESNO 0}"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0085",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} nipped at your feet!\n",
+        "Want to show a little anger?{YESNO 0}"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0086",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is staring blankly\n",
+        "at your head."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0087",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is carefully scanning the\n",
+        "area!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0088",
+      "en_US": "{STRVAR_1 1, 0, 0} is surveying the area!"
+    },
+    {
+      "id": "FollowerTalk_Text_0089",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems to be unhappy that\n",
+        "it’s so hot..."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0090",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0}’s head is bowed\n",
+        "because of the heat."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0091",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems to be really\n",
+        "enjoying the heat!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0092",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems to be happy about\n",
+        "the rain!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0093",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is very happy about the\n",
+        "rain!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0094",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems to be very\n",
+        "surprised that it’s raining!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0095",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} looks like it’s about to\n",
+        "fall over!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0096",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is vigorously producing\n",
+        "fire!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0097",
+      "en_US": "{STRVAR_1 1, 0, 0} suddenly became angry!"
+    },
+    {
+      "id": "FollowerTalk_Text_0098",
+      "en_US": "{STRVAR_1 1, 0, 0} suddenly roared!"
+    },
+    {
+      "id": "FollowerTalk_Text_0099",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} suddenly turned around\n",
+        "and started barking!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0100",
+      "en_US": "{STRVAR_1 1, 0, 0} suddenly turned around!"
+    },
+    {
+      "id": "FollowerTalk_Text_0101",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is playfully nibbling at the\n",
+        "ground."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0102",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is playfully touching the\n",
+        "ground."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0103",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is playfully nibbling at the\n",
+        "ground."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0104",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is rolling a pebble around\n",
+        "playfully."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0105",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is smelling the scents of\n",
+        "the surrounding air."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0106",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} gazed surprisedly at\n",
+        "the rock!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0107",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is looking up with its\n",
+        "mouth gaping open."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0108",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is looking up with its\n",
+        "mouth wide open."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0109",
+      "en_US": "{STRVAR_1 1, 0, 0} is cheerful!"
+    },
+    {
+      "id": "FollowerTalk_Text_0110",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is swinging its arms around\n",
+        "and shouting!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0111",
+      "en_US": "{STRVAR_1 1, 0, 0} let out a roar!"
+    },
+    {
+      "id": "FollowerTalk_Text_0112",
+      "en_US": "{STRVAR_1 1, 0, 0} let out a roar!"
+    },
+    {
+      "id": "FollowerTalk_Text_0113",
+      "en_US": "{STRVAR_1 1, 0, 0} is staring at the sea."
+    },
+    {
+      "id": "FollowerTalk_Text_0114",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is excited to be looking at\n",
+        "the sea!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0115",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is so happy, it started\n",
+        "dancing!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0116",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is so happy, it started\n",
+        "rolling around."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0117",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems very happy to\n",
+        "see you."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0118",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems very happy and is\n",
+        "rolling around!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0119",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems very happy and\n",
+        "is jumping around!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0120",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is splashing about\n",
+        "happily!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0121",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems to want to ride the\n",
+        "train!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0122",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} got tangled in the\n",
+        "branches and almost fell down!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0123",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} was surprised when it got\n",
+        "hit by a branch!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0124",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} opened its mouth very\n",
+        "wide!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0125",
+      "en_US": "{STRVAR_1 1, 0, 0} cried out very loudly!"
+    },
+    {
+      "id": "FollowerTalk_Text_0126",
+      "en_US": "{STRVAR_1 1, 0, 0} yawned widely!"
+    },
+    {
+      "id": "FollowerTalk_Text_0127",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is staring into the\n",
+        "depths..."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0128",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is looking into the\n",
+        "depths and shivering..."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0129",
+      "en_US": "{STRVAR_1 1, 0, 0} roared!"
+    },
+    {
+      "id": "FollowerTalk_Text_0130",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is playing around in the\n",
+        "fallen leaves."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0131",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is concerned about the\n",
+        "trap."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0132",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} began poking you in the\n",
+        "stomach!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0133",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0}’s face shows a drop of\n",
+        "sweat..."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0134",
+      "en_US": "{STRVAR_1 1, 0, 0} is scared of the cliff..."
+    },
+    {
+      "id": "FollowerTalk_Text_0135",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems to be getting an\n",
+        "electrifying feeling!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0136",
+      "en_US": "{STRVAR_1 1, 0, 0} feels refreshed!"
+    },
+    {
+      "id": "FollowerTalk_Text_0137",
+      "en_US": "{STRVAR_1 1, 0, 0} is trembling!"
+    },
+    {
+      "id": "FollowerTalk_Text_0138",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is steadily observing the\n",
+        "flow of the river."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0139",
+      "en_US": "{STRVAR_1 1, 0, 0} let out a fighting cry!"
+    },
+    {
+      "id": "FollowerTalk_Text_0140",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is listening to the sound\n",
+        "of the machine."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0141",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems to want to touch\n",
+        "the machine!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0142",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is staring intently at the\n",
+        "machine."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0143",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is glaring at the Team\n",
+        "Rocket thug!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0144",
+      "en_US": "{STRVAR_1 1, 0, 0} suddenly barked!"
+    },
+    {
+      "id": "FollowerTalk_Text_0145",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} moved around and showed\n",
+        "its skills!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0146",
+      "en_US": "{STRVAR_1 1, 0, 0} looks very interested!"
+    },
+    {
+      "id": "FollowerTalk_Text_0147",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is gazing around\n",
+        "restlessly."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0148",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is wandering around and\n",
+        "listening to the different sounds."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0149",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is wandering around and\n",
+        "searching for something."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0150",
+      "en_US": "{STRVAR_1 1, 0, 0} is wandering around."
+    },
+    {
+      "id": "FollowerTalk_Text_0151",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is wandering around and\n",
+        "enjoying the forest scenery."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0152",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is wandering around,\n",
+        "listening to the sound of running water."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0153",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is wandering around,\n",
+        "surveying the area."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0154",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems highly interested\n",
+        "in the tree."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0155",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is getting itself\n",
+        "steeled up!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0156",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is getting tense with\n",
+        "nervous energy."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0157",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is playing around, plucking\n",
+        "bits of grass."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0158",
+      "en_US": "{STRVAR_1 1, 0, 0} is munching at the grass."
+    },
+    {
+      "id": "FollowerTalk_Text_0159",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is playing around, pulling\n",
+        "out the grass!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0160",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is preoccupied by the\n",
+        "floor, which seems like it may collapse."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0161",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is preoccupied by the\n",
+        "ceiling, which seems like it may collapse."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0162",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is opening its mouth in a\n",
+        "wide gape."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0163",
+      "en_US": "{STRVAR_1 1, 0, 0}’s teeth are chattering!"
+    },
+    {
+      "id": "FollowerTalk_Text_0164",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} turned its head and let\n",
+        "out a fighting yell!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0165",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is trying very hard to\n",
+        "keep up with you..."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0166",
+      "en_US": "{STRVAR_1 1, 0, 0} rolled around in circles!"
+    },
+    {
+      "id": "FollowerTalk_Text_0167",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is sniffing at the air,\n",
+        "smelling the tide."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0168",
+      "en_US": "{STRVAR_1 1, 0, 0} is standing guard!"
+    },
+    {
+      "id": "FollowerTalk_Text_0169",
+      "en_US": "{STRVAR_1 1, 0, 0} is glowing with health!"
+    },
+    {
+      "id": "FollowerTalk_Text_0170",
+      "en_US": "{STRVAR_1 1, 0, 0} gave a hearty greeting!"
+    },
+    {
+      "id": "FollowerTalk_Text_0171",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} jumped happily into the\n",
+        "air!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0172",
+      "en_US": "{STRVAR_1 1, 0, 0} is touching the ice."
+    },
+    {
+      "id": "FollowerTalk_Text_0173",
+      "en_US": "{STRVAR_1 1, 0, 0} is gnawing at the ice."
+    },
+    {
+      "id": "FollowerTalk_Text_0174",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is scratching at the\n",
+        "ground as if searching for something."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0175",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} has turned its face this\n",
+        "way and is staring intently."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0176",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} faced this way\n",
+        "and grinned."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0177",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} faced this way and\n",
+        "nodded."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0178",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is staring at the sunlight\n",
+        "coming through the trees."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0179",
+      "en_US": "{STRVAR_1 1, 0, 0} is rolling around."
+    },
+    {
+      "id": "FollowerTalk_Text_0180",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is scared and snuggled up\n",
+        "to {STRVAR_1 3, 2, 0}!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0181",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is scared and snuggled\n",
+        "up to you!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0182",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is cheerful because of\n",
+        "the cold!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0183",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems unhappy about the\n",
+        "cold..."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0184",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is cheering happily\n",
+        "because of the cold!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0185",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} made its body slightly\n",
+        "smaller because of the cold..."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0186",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems to be feeling better\n",
+        "because of the sea breeze!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0187",
+      "en_US": "{STRVAR_1 1, 0, 0} is looking down nervously!"
+    },
+    {
+      "id": "FollowerTalk_Text_0188",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} looked down and was\n",
+        "surprised!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0189",
+      "en_US": "{STRVAR_1 1, 0, 0} flared its fiery tail!"
+    },
+    {
+      "id": "FollowerTalk_Text_0190",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems interested in\n",
+        "Bicycles!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0191",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is looking at\n",
+        "{STRVAR_1 3, 2, 0}’s footprints."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0192",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is staring intently at the\n",
+        "reflection of its face."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0193",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is staring at the\n",
+        "reflection of its face."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0194",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems very unhappy to be\n",
+        "wet..."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0195",
+      "en_US": "{STRVAR_1 1, 0, 0} is sniffing at the ground."
+    },
+    {
+      "id": "FollowerTalk_Text_0196",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is poking steadily at the\n",
+        "ground."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0197",
+      "en_US": "{STRVAR_1 1, 0, 0} is looking down steadily."
+    },
+    {
+      "id": "FollowerTalk_Text_0198",
+      "en_US": "{STRVAR_1 1, 0, 0} is poking at the ground."
+    },
+    {
+      "id": "FollowerTalk_Text_0199",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is playfully digging in the\n",
+        "ground."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0200",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is steadily poking at the\n",
+        "ground."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0201",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems to be doing warm-up\n",
+        "exercises..."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0202",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is walking along\n",
+        "cautiously!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0203",
+      "en_US": "{STRVAR_1 1, 0, 0} is being nervously quiet..."
+    },
+    {
+      "id": "FollowerTalk_Text_0204",
+      "en_US": "{STRVAR_1 1, 0, 0} seems to be very happy!"
+    },
+    {
+      "id": "FollowerTalk_Text_0205",
+      "en_US": "{STRVAR_1 1, 0, 0} seems a bit nervous."
+    },
+    {
+      "id": "FollowerTalk_Text_0206",
+      "en_US": "{STRVAR_1 1, 0, 0} is a little excited!"
+    },
+    {
+      "id": "FollowerTalk_Text_0207",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} fell down and got a little\n",
+        "frustrated!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0208",
+      "en_US": "{STRVAR_1 1, 0, 0} seems a little tired."
+    },
+    {
+      "id": "FollowerTalk_Text_0209",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is bustling around,\n",
+        "showing off its speed!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0210",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seemed to tremble a little\n",
+        "in surprise!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0211",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} slipped and bumped into\n",
+        "you!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0212",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is a bit nervous about the\n",
+        "narrow space!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0213",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is cautious about the\n",
+        "confined area!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0214",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is concerned about going\n",
+        "outside!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0215",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is happy to see\n",
+        "what’s outdoors!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0216",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is itching to see\n",
+        "outdoors!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0217",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is poking at you because\n",
+        "it wants to see outdoors!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0218",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems dazzled after\n",
+        "seeing the sky!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0219",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is looking up at the tall\n",
+        "mountain..."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0220",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} cried out, looking at the\n",
+        "tall mountain!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0221",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems concerned about\n",
+        "the waterfall!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0222",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is listening to the sound\n",
+        "of the waterfall."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0223",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems to be hearing\n",
+        "something from inside the waterfall..."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0224",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems to have found\n",
+        "something inside the waterfall...?"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0225",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} kept moving at a good clip\n",
+        "to show off its stamina!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0226",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is feeling an unusual\n",
+        "presence..."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0227",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is sniffing at the\n",
+        "straw mats on the floor."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0228",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is listening to the sounds\n",
+        "of the building."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0229",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is looking up at the\n",
+        "tower."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0230",
+      "en_US": "{STRVAR_1 1, 0, 0} is growling softly..."
+    },
+    {
+      "id": "FollowerTalk_Text_0231",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is working hard to show\n",
+        "off its mighty power!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0232",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is making an unhappy\n",
+        "face..."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0233",
+      "en_US": "{STRVAR_1 1, 0, 0} is a little nervous..."
+    },
+    {
+      "id": "FollowerTalk_Text_0234",
+      "en_US": "{STRVAR_1 1, 0, 0} is a little scared."
+    },
+    {
+      "id": "FollowerTalk_Text_0235",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems to have gotten a\n",
+        "bit of a zap!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0236",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems to be a little\n",
+        "hesitant..."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0237",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is intently watching the\n",
+        "fishing."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0238",
+      "en_US": "{STRVAR_1 1, 0, 0} snapped its vine!"
+    },
+    {
+      "id": "FollowerTalk_Text_0239",
+      "en_US": "{STRVAR_1 1, 0, 0} wiggled its vine!"
+    },
+    {
+      "id": "FollowerTalk_Text_0240",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is staring intently at the\n",
+        "goods on display!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0241",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} stared at the ceiling\n",
+        "in surprise!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0242",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} was staring at the ceiling\n",
+        "and seemed about to fall down!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0243",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is looking up at the\n",
+        "ceiling."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0244",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} looked off into the\n",
+        "distance and barked!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0245",
+      "en_US": "{STRVAR_1 1, 0, 0} seems very hot..."
+    },
+    {
+      "id": "FollowerTalk_Text_0246",
+      "en_US": "{STRVAR_1 1, 0, 0} greeted your mom!"
+    },
+    {
+      "id": "FollowerTalk_Text_0247",
+      "en_US": "{STRVAR_1 1, 0, 0} seems very happy!"
+    },
+    {
+      "id": "FollowerTalk_Text_0248",
+      "en_US": "{STRVAR_1 1, 0, 0} seems very cold!"
+    },
+    {
+      "id": "FollowerTalk_Text_0249",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems to really be having\n",
+        "fun!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0250",
+      "en_US": "{STRVAR_1 1, 0, 0} is playing on the sand!"
+    },
+    {
+      "id": "FollowerTalk_Text_0251",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is having fun getting\n",
+        "tangled in the long grass!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0252",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is tangled in the long\n",
+        "grass!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0253",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is tripping over the tall\n",
+        "grass!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0254",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is biting at the tall\n",
+        "grass!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0255",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is staring intently at the\n",
+        "surging sea."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0256",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems to be scared of\n",
+        "something..."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0257",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} was surprised by a sudden\n",
+        "sound!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0258",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} sensed something strange\n",
+        "and was surprised!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0259",
+      "en_US": "{STRVAR_1 1, 0, 0} is sensing something..."
+    },
+    {
+      "id": "FollowerTalk_Text_0260",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems to have found\n",
+        "something!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0261",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is listening intently to\n",
+        "the sound of the waves."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0262",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is happily watching the\n",
+        "waves!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0263",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems to be hearing a\n",
+        "strange sound."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0264",
+      "en_US": "{STRVAR_1 1, 0, 0} seems incredibly happy!"
+    },
+    {
+      "id": "FollowerTalk_Text_0265",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems angry for some\n",
+        "reason!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0266",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is nervous for some\n",
+        "reason!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0267",
+      "en_US": "{STRVAR_1 1, 0, 0} seems a little cold..."
+    },
+    {
+      "id": "FollowerTalk_Text_0268",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems to be enjoying this\n",
+        "a little bit!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0269",
+      "en_US": "{STRVAR_1 1, 0, 0} seems a little shy."
+    },
+    {
+      "id": "FollowerTalk_Text_0270",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems to be very happy\n",
+        "for some reason!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0271",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is suspiciously sniffing a\n",
+        "scent."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0272",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is looking this way and\n",
+        "smiling."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0273",
+      "en_US": "{STRVAR_1 1, 0, 0} is relaxing."
+    },
+    {
+      "id": "FollowerTalk_Text_0274",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is dazzled by the shiny\n",
+        "brightness of the bridge!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0275",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is dancing around\n",
+        "the pillar!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0276",
+      "en_US": "{STRVAR_1 1, 0, 0} pulled back to run!"
+    },
+    {
+      "id": "FollowerTalk_Text_0277",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} hid behind you out of\n",
+        "embarrassment, it seems!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0278",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} ran away out of\n",
+        "embarrassment!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0279",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is playing around with a\n",
+        "leaf!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0280",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems to relax as it hears\n",
+        "the sound of rustling leaves..."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0281",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems to be listening to\n",
+        "the sound of rustling leaves."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0282",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is playing around,\n",
+        "touching the leaves."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0283",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} shielded its vision\n",
+        "against the sparkling light!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0284",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is dancing and splashing\n",
+        "around!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0285",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is dancing and splashing\n",
+        "around!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0286",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is leaping around to\n",
+        "demonstrate its ability to jump high!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0287",
+      "en_US": "{STRVAR_1 1, 0, 0} is jumping around!"
+    },
+    {
+      "id": "FollowerTalk_Text_0288",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems uneasy and is\n",
+        "poking {STRVAR_1 3, 2, 0}."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0289",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is looking at the machine\n",
+        "in a strange manner."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0290",
+      "en_US": "{STRVAR_1 1, 0, 0} greeted the two!"
+    },
+    {
+      "id": "FollowerTalk_Text_0291",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} looked at the two and\n",
+        "cried out."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0292",
+      "en_US": "{STRVAR_1 1, 0, 0} is swaying with the boat!"
+    },
+    {
+      "id": "FollowerTalk_Text_0293",
+      "en_US": "{STRVAR_1 1, 0, 0} is dizzy!"
+    },
+    {
+      "id": "FollowerTalk_Text_0294",
+      "en_US": "{STRVAR_1 1, 0, 0} is shivering..."
+    },
+    {
+      "id": "FollowerTalk_Text_0295",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is staring intently at the\n",
+        "fountain."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0296",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is happily looking at the\n",
+        "fountain!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0297",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is glaring at the PERSIAN\n",
+        "statue!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0298",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is looking at the PERSIAN\n",
+        "statue and howling!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0299",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} sent a ring-shaped cloud\n",
+        "of spores into the air!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0300",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is sniffing the grass in\n",
+        "the pasture."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0301",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is staring straight at the\n",
+        "Pokémon League."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0302",
+      "en_US": "{STRVAR_1 1, 0, 0} spat fire!"
+    },
+    {
+      "id": "FollowerTalk_Text_0303",
+      "en_US": "{STRVAR_1 1, 0, 0} emitted fire and shouted!"
+    },
+    {
+      "id": "FollowerTalk_Text_0304",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is staring at the\n",
+        "crumbling floor."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0305",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems to be enjoying the\n",
+        "boat ride!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0306",
+      "en_US": "{STRVAR_1 1, 0, 0} is still feeling great!"
+    },
+    {
+      "id": "FollowerTalk_Text_0307",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} doesn’t want to get off\n",
+        "the boat yet!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0308",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is happy at the sight of\n",
+        "the water on the window!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0309",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is looking around\n",
+        "restlessly because it feels lost."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0310",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is cautiously listening\n",
+        "to the surrounding sounds!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0311",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is looking around\n",
+        "restlessly."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0312",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is looking around\n",
+        "absentmindedly."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0313",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is looking around\n",
+        "restlessly at the lake!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0314",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is surprised at the\n",
+        "dripping water!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0315",
+      "en_US": "{STRVAR_1 1, 0, 0} is playing in the puddle!"
+    },
+    {
+      "id": "FollowerTalk_Text_0316",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is slipping in the water\n",
+        "and almost fell over!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0317",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} spat out a stream of\n",
+        "water!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0318",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is twitching its ears,\n",
+        "listening to the sound of the wind."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0319",
+      "en_US": "{STRVAR_1 1, 0, 0} greeted everyone!"
+    },
+    {
+      "id": "FollowerTalk_Text_0320",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} took notice of the straw\n",
+        "hat."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0321",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} focused with a\n",
+        "sharp gaze!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0322",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is being quiet, with a\n",
+        "peaceful face..."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0323",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} tightly gripped the\n",
+        "{STRVAR_1 8, 4, 0} it’s holding!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0324",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is staring at the\n",
+        "{STRVAR_1 8, 4, 0} it’s holding."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0325",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is staring intently at the\n",
+        "{STRVAR_1 8, 4, 0} it’s holding."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0326",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is crying out while looking\n",
+        "at the monitors!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0327",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is looking around\n",
+        "restlessly at the forest."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0328",
+      "en_US": "{STRVAR_1 1, 0, 0}’s burn looks painful!"
+    },
+    {
+      "id": "FollowerTalk_Text_0329",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems to have found\n",
+        "something on the mountain!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0330",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems to have found\n",
+        "something on the mountain!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0331",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is staring intently at the\n",
+        "mountain."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0332",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is staring intently at the\n",
+        "mountain."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0333",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is looking at the mountain\n",
+        "as if anticipating climbing it."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0334",
+      "en_US": "{STRVAR_1 1, 0, 0} is very eager!"
+    },
+    {
+      "id": "FollowerTalk_Text_0335",
+      "en_US": "{STRVAR_1 1, 0, 0} is even more eager!"
+    },
+    {
+      "id": "FollowerTalk_Text_0336",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is flying through the sky\n",
+        "with grace!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0337",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is gazing at the red\n",
+        "sky..."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0338",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} rolled around on the\n",
+        "floor!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0339",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} slipped on the floor and\n",
+        "seems likely to fall!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0340",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} was surprised at the\n",
+        "sounds the floor is making!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0341",
+      "en_US": "{STRVAR_1 1, 0, 0} is sniffing at the floor."
+    },
+    {
+      "id": "FollowerTalk_Text_0342",
+      "en_US": "{STRVAR_1 1, 0, 0} is sniffing at the floor."
+    },
+    {
+      "id": "FollowerTalk_Text_0343",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} slowly turned to look at\n",
+        "your face."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0344",
+      "en_US": "{STRVAR_1 1, 0, 0} is relaxing comfortably."
+    },
+    {
+      "id": "FollowerTalk_Text_0345",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is wobbling and seems\n",
+        "about to fall over."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0346",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is concerned about the\n",
+        "swaying pillar."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0347",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is dancing along with the\n",
+        "rolling of the ship!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0348",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is gazing at the night\n",
+        "sky..."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0349",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is very composed and sure\n",
+        "of itself."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0350",
+      "en_US": "{STRVAR_1 1, 0, 0} yawned loudly."
+    },
+    {
+      "id": "FollowerTalk_Text_0351",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} got closer to\n",
+        "{STRVAR_1 3, 2, 0}!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0352",
+      "en_US": "{STRVAR_1 1, 0, 0} bumped into {STRVAR_1 3, 2, 0}!"
+    },
+    {
+      "id": "FollowerTalk_Text_0353",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is watching\n",
+        "{STRVAR_1 3, 2, 0}’s face."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0354",
+      "en_US": "{STRVAR_1 1, 0, 0} is saying hello!"
+    },
+    {
+      "id": "FollowerTalk_Text_0355",
+      "en_US": "{STRVAR_1 1, 0, 0} is poking at your feet."
+    },
+    {
+      "id": "FollowerTalk_Text_0356",
+      "en_US": "{STRVAR_1 1, 0, 0} is on the lookout!"
+    },
+    {
+      "id": "FollowerTalk_Text_0357",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is in danger of falling\n",
+        "over!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0358",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is vigorously breathing\n",
+        "fire!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0359",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems to be about to fall\n",
+        "over!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0360",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} was surprised by its own\n",
+        "reflection!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0361",
+      "en_US": "{STRVAR_1 1, 0, 0} is singing happily!"
+    },
+    {
+      "id": "FollowerTalk_Text_0362",
+      "en_US": "{STRVAR_1 1, 0, 0} is happy but shy!"
+    },
+    {
+      "id": "FollowerTalk_Text_0363",
+      "en_US": "{STRVAR_1 1, 0, 0} yawned loudly!"
+    },
+    {
+      "id": "FollowerTalk_Text_0364",
+      "en_US": "{STRVAR_1 1, 0, 0} is poking at your belly."
+    },
+    {
+      "id": "FollowerTalk_Text_0365",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is staring intently at\n",
+        "{STRVAR_1 3, 2, 0}’s face."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0366",
+      "en_US": "{STRVAR_1 1, 0, 0} greeted FARFETCH’D!"
+    },
+    {
+      "id": "FollowerTalk_Text_0367",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} can feel a nice, gentle\n",
+        "breeze."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0368",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is gazing restlessly at\n",
+        "the building."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0369",
+      "en_US": "{STRVAR_1 1, 0, 0} is smelling the grass."
+    },
+    {
+      "id": "FollowerTalk_Text_0370",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is happy to have found a\n",
+        "rock in the grass!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0371",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is taking shelter in the\n",
+        "grass from the rain."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0372",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is rolling around in the\n",
+        "grass."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0373",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is splashing around in the\n",
+        "wet grass."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0374",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems to have gotten\n",
+        "caught in the clumps of grass!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0375",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} was surprised by the\n",
+        "sounds in the thicket!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0376",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is noticing the scent of\n",
+        "the grass."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0377",
+      "en_US": "{STRVAR_1 1, 0, 0} is staring at the grass."
+    },
+    {
+      "id": "FollowerTalk_Text_0378",
+      "en_US": "{STRVAR_1 1, 0, 0} is stomping on the grass!"
+    },
+    {
+      "id": "FollowerTalk_Text_0379",
+      "en_US": "{STRVAR_1 1, 0, 0} is pulling out the grass!"
+    },
+    {
+      "id": "FollowerTalk_Text_0380",
+      "en_US": "{STRVAR_1 1, 0, 0} is moving its jaw."
+    },
+    {
+      "id": "FollowerTalk_Text_0381",
+      "en_US": "{STRVAR_1 1, 0, 0} is clamping its mouth shut."
+    },
+    {
+      "id": "FollowerTalk_Text_0382",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is opening and closing its\n",
+        "mouth."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0383",
+      "en_US": "{STRVAR_1 1, 0, 0} greeted Mary!"
+    },
+    {
+      "id": "FollowerTalk_Text_0384",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is sniffing around the\n",
+        "room."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0385",
+      "en_US": "{STRVAR_1 1, 0, 0} is coming along happily!"
+    },
+    {
+      "id": "FollowerTalk_Text_0386",
+      "en_US": "{STRVAR_1 1, 0, 0} is shivering with cold..."
+    },
+    {
+      "id": "FollowerTalk_Text_0387",
+      "en_US": "{STRVAR_1 1, 0, 0} is peering down."
+    },
+    {
+      "id": "FollowerTalk_Text_0388",
+      "en_US": "{STRVAR_1 1, 0, 0} seems a bit scared..."
+    },
+    {
+      "id": "FollowerTalk_Text_0389",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} slipped and seems about\n",
+        "to fall over!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0390",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems to really enjoy\n",
+        "sliding around!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0391",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is looking outside and\n",
+        "frolicking!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0392",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is staring intently at the\n",
+        "sky."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0393",
+      "en_US": "{STRVAR_1 1, 0, 0} is looking up at the sky."
+    },
+    {
+      "id": "FollowerTalk_Text_0394",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is staring intently off\n",
+        "into the distance."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0395",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is shivering with the\n",
+        "effects of being poisoned..."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0396",
+      "en_US": "{STRVAR_1 1, 0, 0} is very happy!"
+    },
+    {
+      "id": "FollowerTalk_Text_0397",
+      "en_US": "{STRVAR_1 1, 0, 0} was jumping up and down!"
+    },
+    {
+      "id": "FollowerTalk_Text_0398",
+      "en_US": "{STRVAR_1 1, 0, 0} feels something..."
+    },
+    {
+      "id": "FollowerTalk_Text_0399",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} feels something and is\n",
+        "howling!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0400",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is staring patiently at\n",
+        "nothing at all."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0401",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is somehow forcing itself\n",
+        "to keep going."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0402",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is somehow fighting off\n",
+        "sleep..."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0403",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0}’s head is nodding as it\n",
+        "starts to fall asleep..."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0404",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} has a sleepy look on\n",
+        "its face..."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0405",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is dancing around in high\n",
+        "spirits!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0406",
+      "en_US": "{STRVAR_1 1, 0, 0} is making its leaf twitch."
+    },
+    {
+      "id": "FollowerTalk_Text_0407",
+      "en_US": "{STRVAR_1 1, 0, 0} is waving its leaf around."
+    },
+    {
+      "id": "FollowerTalk_Text_0408",
+      "en_US": "{STRVAR_1 1, 0, 0} is throwing a leaf around!"
+    },
+    {
+      "id": "FollowerTalk_Text_0409",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems to want to play with\n",
+        "MARILL!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0410",
+      "en_US": "{STRVAR_1 1, 0, 0} blew out a fireball."
+    },
+    {
+      "id": "FollowerTalk_Text_0411",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} blew out a couple\n",
+        "of fireballs."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0412",
+      "en_US": "{STRVAR_1 1, 0, 0} is breathing out fire!"
+    },
+    {
+      "id": "FollowerTalk_Text_0413",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is trying to touch\n",
+        "the machine."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0414",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is concerned about your\n",
+        "mom!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0415",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is splashing around in the\n",
+        "puddle!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0416",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is staring at the\n",
+        "reflections in the water."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0417",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is saying hello to\n",
+        "everyone!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0418",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is fidgeting in front of\n",
+        "everyone..."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0419",
+      "en_US": "{STRVAR_1 1, 0, 0} is very eager!"
+    },
+    {
+      "id": "FollowerTalk_Text_0420",
+      "en_US": "{STRVAR_1 1, 0, 0} is composed!"
+    },
+    {
+      "id": "FollowerTalk_Text_0421",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems to think that\n",
+        "{STRVAR_1 3, 2, 0} has disappeared!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0422",
+      "en_US": [
+        "......\n",
+        "Your Pokémon seems to have sneezed!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0423",
+      "en_US": [
+        "......\n",
+        "Your Pokémon noticed that your shoes\f",
+        "are a bit dirty."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0424",
+      "en_US": [
+        "......\n",
+        "Your Pokémon seems a little cold."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0425",
+      "en_US": [
+        "......\n",
+        "It seems to have eaten something\f",
+        "strange. It’s making an odd face..."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0426",
+      "en_US": [
+        "......\n",
+        "Your Pokémon is surprised\f",
+        "about something."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0427",
+      "en_US": [
+        "......\n",
+        "Your Pokémon’s scared about something."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0428",
+      "en_US": [
+        "......\n",
+        "Your Pokémon seems to be\f",
+        "smelling something good."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0429",
+      "en_US": [
+        "......\n",
+        "Your Pokémon is looking at the red sky."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0430",
+      "en_US": [
+        "......\n",
+        "Your Pokémon is staring at the\f",
+        "swaying boat."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0431",
+      "en_US": [
+        "...Oh!\n",
+        "It’s about to tamper with\f",
+        "the shelves! Scold it? {YESNO 0}"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0432",
+      "en_US": [
+        "...Oh!\n",
+        "It seems about to play a prank with\f",
+        "items! Scold it?"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0433",
+      "en_US": [
+        "......\n",
+        "Your Pokémon is scowling in\f",
+        "this direction."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0434",
+      "en_US": [
+        "......\n",
+        "Your Pokémon seems surprised that the\f",
+        "shelves might fall!\n"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0435",
+      "en_US": [
+        "......\n",
+        "The shelves got pretty messy."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0436",
+      "en_US": [
+        "......\n",
+        "Your Pokémon won’t look you in the eye."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0437",
+      "en_US": [
+        "......\n",
+        "Your Pokémon won’t come even though\f",
+        "you’re calling."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0438",
+      "en_US": [
+        "Oh! {STRVAR_1 1, 0, 0} has a scrap of paper\n",
+        "in its mouth!\f",
+        "Get angry?{YESNO 0}"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0439",
+      "en_US": [
+        "Oh! {STRVAR_1 1, 0, 0} has the cord in its\n",
+        "mouth! \f",
+        "Get angry?{YESNO 0}"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0440",
+      "en_US": [
+        "Oh! {STRVAR_1 1, 0, 0} is touching some kind\n",
+        "of switch!\f",
+        "Make it stop?{YESNO 0}"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0441",
+      "en_US": [
+        "Oh!\n",
+        "It’s slipping and came over here for\f",
+        "support!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0442",
+      "en_US": [
+        "Oh!\n",
+        "It’s stealing food!\f",
+        "Scold it?{YESNO 0}"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0443",
+      "en_US": [
+        "Oh!\n",
+        "It ate something!\f",
+        "Open its mouth?{YESNO 0}"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0444",
+      "en_US": [
+        "Oh!\n",
+        "Your Bag has a little dirt on it..."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0445",
+      "en_US": [
+        "Oh!\n",
+        "There’s a leaf!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0446",
+      "en_US": [
+        "Your Pokémon is happily gazing at the\n",
+        "morning sun!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0447",
+      "en_US": "Your Pokémon is blowing sand in the air!"
+    },
+    {
+      "id": "FollowerTalk_Text_0448",
+      "en_US": [
+        "Your Pokémon is happily looking at\n",
+        "{STRVAR_1 3, 2, 0}’s footprints!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0449",
+      "en_US": [
+        "Your Pokémon is happily looking at\n",
+        "{STRVAR_1 3, 2, 0}’s footprints!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0450",
+      "en_US": [
+        "Your Pokémon doesn’t like splashing\n",
+        "around on the ground..."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0451",
+      "en_US": [
+        "Your Pokémon is happy to be splashing\n",
+        "around on the ground!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0452",
+      "en_US": "Your Pokémon is hot and cheerful!"
+    },
+    {
+      "id": "FollowerTalk_Text_0453",
+      "en_US": [
+        "Your Pokémon seems to be unhappy that\n",
+        "it’s hot..."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0454",
+      "en_US": [
+        "Careful!\n",
+        "Your Pokémon seems about to fall..."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0455",
+      "en_US": [
+        "Careful! Seems like the floor could\n",
+        "collapse, and it might fall."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0456",
+      "en_US": "Your Pokémon almost slipped and fell!"
+    },
+    {
+      "id": "FollowerTalk_Text_0457",
+      "en_US": "{STRVAR_1 1, 0, 0} is keeping close to you."
+    },
+    {
+      "id": "FollowerTalk_Text_0458",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} started spinning around in\n",
+        "circles."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0459",
+      "en_US": [
+        "Your Pokémon seems to be happy about\n",
+        "the great weather!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0460",
+      "en_US": [
+        "Sniff, sniff!\n",
+        "Something smells good!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0461",
+      "en_US": "{STRVAR_1 1, 0, 0} suddenly howled!"
+    },
+    {
+      "id": "FollowerTalk_Text_0462",
+      "en_US": [
+        "Your Pokémon was surprised that you\n",
+        "suddenly spoke to it!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0463",
+      "en_US": "Your Pokémon is greeting Strawberry!"
+    },
+    {
+      "id": "FollowerTalk_Text_0464",
+      "en_US": "Your Pokémon is dancing with you!"
+    },
+    {
+      "id": "FollowerTalk_Text_0465",
+      "en_US": "{STRVAR_1 1, 0, 0} is suddenly angry!"
+    },
+    {
+      "id": "FollowerTalk_Text_0466",
+      "en_US": [
+        "Your Pokémon is staring at\n",
+        "various items."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0467",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is happily digging in the\n",
+        "ground!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0468",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} started grinding at the\n",
+        "rocks!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0469",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is having fun hitting rocks\n",
+        "together!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0470",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is having fun rolling\n",
+        "around!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0471",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} started pounding the\n",
+        "ground flat!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0472",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} started to dance and\n",
+        "wobble in a strange manner."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0473",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} swayed and danced\n",
+        "mysteriously."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0474",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} started to dance and\n",
+        "sway in a strange manner."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0475",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} swayed and danced\n",
+        "mysteriously."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0476",
+      "en_US": [
+        "Your Pokémon is staring intently at\n",
+        "the sea!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0477",
+      "en_US": "Your Pokémon is mumbling happily."
+    },
+    {
+      "id": "FollowerTalk_Text_0478",
+      "en_US": "Your Pokémon yawned loudly!"
+    },
+    {
+      "id": "FollowerTalk_Text_0479",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} shook the tower with its\n",
+        "voice!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0480",
+      "en_US": "{STRVAR_1 1, 0, 0} howled loudly!"
+    },
+    {
+      "id": "FollowerTalk_Text_0481",
+      "en_US": "Seems the breeze is coming from here."
+    },
+    {
+      "id": "FollowerTalk_Text_0482",
+      "en_US": [
+        "Your Pokémon is excitedly watching\n",
+        "the dance!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0483",
+      "en_US": [
+        "Your Pokémon is looking restlessly at\n",
+        "the souvenir."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0484",
+      "en_US": "{STRVAR_1 1, 0, 0} is feeling eager!"
+    },
+    {
+      "id": "FollowerTalk_Text_0485",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is happily waving\n",
+        "{STRVAR_1 8, 4, 0} around and singing."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0486",
+      "en_US": "{STRVAR_1 1, 0, 0} is dancing around happily!"
+    },
+    {
+      "id": "FollowerTalk_Text_0487",
+      "en_US": [
+        "Your Pokémon stretched out its body\n",
+        "and is relaxing."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0488",
+      "en_US": "Your Pokémon is feeling good and sleepy."
+    },
+    {
+      "id": "FollowerTalk_Text_0489",
+      "en_US": "{STRVAR_1 1, 0, 0} howled very loudly!"
+    },
+    {
+      "id": "FollowerTalk_Text_0490",
+      "en_US": [
+        "Your Pokémon is looking around\n",
+        "restlessly for something."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0491",
+      "en_US": [
+        "Your Pokémon is surveying the\n",
+        "shelves restlessly."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0492",
+      "en_US": [
+        "Your Pokémon is observing the whirling\n",
+        "weather vanes with some concern."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0493",
+      "en_US": [
+        "Your Pokémon has caught the scent\n",
+        "of smoke."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0494",
+      "en_US": [
+        "Your Pokémon is smelling the scent of\n",
+        "the flowers."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0495",
+      "en_US": [
+        "Your Pokémon is smelling the scent of\n",
+        "the floor."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0496",
+      "en_US": [
+        "Sniff, sniff!\n",
+        "Is there something nearby?"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0497",
+      "en_US": "{STRVAR_1 1, 0, 0} is sniffing at the girl."
+    },
+    {
+      "id": "FollowerTalk_Text_0498",
+      "en_US": [
+        "Sniff, sniff!\n",
+        "Something smells really good!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0499",
+      "en_US": [
+        "Your Pokémon is sniffing the scent\n",
+        "of flowers."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0500",
+      "en_US": "{STRVAR_1 1, 0, 0} gave you a sunny look!"
+    },
+    {
+      "id": "FollowerTalk_Text_0501",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is leaping around more\n",
+        "than usual!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0502",
+      "en_US": [
+        "Your Pokémon seems surprised to\n",
+        "touch ice!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0503",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is staring intently at its\n",
+        "opponent!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0504",
+      "en_US": [
+        "Your Pokémon is staring intently at\n",
+        "the blackboard...\f",
+        "But it doesn’t seem to understand."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0505",
+      "en_US": "{STRVAR_1 1, 0, 0} is poking at garbage..."
+    },
+    {
+      "id": "FollowerTalk_Text_0506",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is concerned about the\n",
+        "other side of the fence, it seems."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0507",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems very happy about\n",
+        "the cold!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0508",
+      "en_US": "{STRVAR_1 1, 0, 0} snuggled up for warmth!"
+    },
+    {
+      "id": "FollowerTalk_Text_0509",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} got closer because it\n",
+        "seems cold."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0510",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is staring intently at the\n",
+        "shelves."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0511",
+      "en_US": [
+        "Your Pokémon is very concerned about\n",
+        "the room below."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0512",
+      "en_US": "Your Pokémon isn’t moving."
+    },
+    {
+      "id": "FollowerTalk_Text_0513",
+      "en_US": [
+        "Your Pokémon is rolling a screw from a\n",
+        "Bicycle around."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0514",
+      "en_US": "Your Pokémon seems happy to be all wet!"
+    },
+    {
+      "id": "FollowerTalk_Text_0515",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} doesn’t seem to like being\n",
+        "all wet..."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0516",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} shook the tower with its\n",
+        "cry!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0517",
+      "en_US": "{STRVAR_1 1, 0, 0} roared loudly!"
+    },
+    {
+      "id": "FollowerTalk_Text_0518",
+      "en_US": "{STRVAR_1 1, 0, 0} danced a wonderful dance!"
+    },
+    {
+      "id": "FollowerTalk_Text_0519",
+      "en_US": "{STRVAR_1 1, 0, 0} is very happy!"
+    },
+    {
+      "id": "FollowerTalk_Text_0520",
+      "en_US": "{STRVAR_1 1, 0, 0} danced beautifully!"
+    },
+    {
+      "id": "FollowerTalk_Text_0521",
+      "en_US": "{STRVAR_1 1, 0, 0} danced happily!"
+    },
+    {
+      "id": "FollowerTalk_Text_0522",
+      "en_US": [
+        "Your Pokémon seems to be happy that\n",
+        "it found something outside!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0523",
+      "en_US": "{STRVAR_1 1, 0, 0} seems unhappy somehow..."
+    },
+    {
+      "id": "FollowerTalk_Text_0524",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is cheerful that it’s\n",
+        "become a bit cold!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0525",
+      "en_US": "{STRVAR_1 1, 0, 0} seemed a little surprised."
+    },
+    {
+      "id": "FollowerTalk_Text_0526",
+      "en_US": "Your Pokémon is drooling a little..."
+    },
+    {
+      "id": "FollowerTalk_Text_0527",
+      "en_US": "Your Pokémon stumbled and nearly fell!"
+    },
+    {
+      "id": "FollowerTalk_Text_0528",
+      "en_US": [
+        "Your Pokémon seems to be enjoying\n",
+        "sliding around!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0529",
+      "en_US": "Your Pokémon is trying to push you!"
+    },
+    {
+      "id": "FollowerTalk_Text_0530",
+      "en_US": [
+        "Your Pokémon stretched out\n",
+        "and relaxed!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0531",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is making noise as it \n",
+        "happily digs in the ground!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0532",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is scraping at the ground\n",
+        "intensely!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0533",
+      "en_US": "{STRVAR_1 1, 0, 0} seems very happy!"
+    },
+    {
+      "id": "FollowerTalk_Text_0534",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is staring intently into\n",
+        "the distance."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0535",
+      "en_US": "{STRVAR_1 1, 0, 0} suddenly howled!"
+    },
+    {
+      "id": "FollowerTalk_Text_0536",
+      "en_US": "{STRVAR_1 1, 0, 0} looks excited!"
+    },
+    {
+      "id": "FollowerTalk_Text_0537",
+      "en_US": [
+        "Your Pokémon seems to be\n",
+        "singing something?"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0538",
+      "en_US": "Is there a stream nearby?"
+    },
+    {
+      "id": "FollowerTalk_Text_0539",
+      "en_US": [
+        "Your Pokémon is feeling alert because\n",
+        "of something..."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0540",
+      "en_US": [
+        "Your Pokémon seems happy to have\n",
+        "found something!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0541",
+      "en_US": [
+        "Your Pokémon is staring intently\n",
+        "at nothing..."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0542",
+      "en_US": "Your Pokémon seems somehow unhappy."
+    },
+    {
+      "id": "FollowerTalk_Text_0543",
+      "en_US": "{STRVAR_1 1, 0, 0} seems very happy!"
+    },
+    {
+      "id": "FollowerTalk_Text_0544",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems so happy that it’s\n",
+        "dancing."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0545",
+      "en_US": "Your Pokémon is angry about something!"
+    },
+    {
+      "id": "FollowerTalk_Text_0546",
+      "en_US": [
+        "Your Pokémon seems to be smelling\n",
+        "something good!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0547",
+      "en_US": [
+        "Your Pokémon seems to be hearing\n",
+        "something from the wall..."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0548",
+      "en_US": "A cold wind suddenly blew by!"
+    },
+    {
+      "id": "FollowerTalk_Text_0549",
+      "en_US": "Your Pokémon seems very hot..."
+    },
+    {
+      "id": "FollowerTalk_Text_0550",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems to feel a little\n",
+        "claustrophobic."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0551",
+      "en_US": "{STRVAR_1 1, 0, 0} seems embarrassed."
+    },
+    {
+      "id": "FollowerTalk_Text_0552",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} gives you a happy look\n",
+        "and a smile!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0553",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is happily digging itself\n",
+        "into the ground!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0554",
+      "en_US": "{STRVAR_1 1, 0, 0} is singing and humming!"
+    },
+    {
+      "id": "FollowerTalk_Text_0555",
+      "en_US": [
+        "Your Pokémon has a flower petal on\n",
+        "its face!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0556",
+      "en_US": [
+        "Your Pokémon seems to want to go to\n",
+        "the sea as soon as possible!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0557",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is making a face like it’s\n",
+        "angry!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0558",
+      "en_US": "{STRVAR_1 1, 0, 0} suddenly started dancing!"
+    },
+    {
+      "id": "FollowerTalk_Text_0559",
+      "en_US": "{STRVAR_1 1, 0, 0} is looking up at the sky..."
+    },
+    {
+      "id": "FollowerTalk_Text_0560",
+      "en_US": "{STRVAR_1 1, 0, 0} had fun dancing a dance!"
+    },
+    {
+      "id": "FollowerTalk_Text_0561",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is so happy, it began\n",
+        "to dance!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0562",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is trembling with\n",
+        "eagerness!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0563",
+      "en_US": "{STRVAR_1 1, 0, 0} suddenly danced!"
+    },
+    {
+      "id": "FollowerTalk_Text_0564",
+      "en_US": "{STRVAR_1 1, 0, 0} is looking up at the sky..."
+    },
+    {
+      "id": "FollowerTalk_Text_0565",
+      "en_US": [
+        "Your Pokémon is having fun splashing\n",
+        "around in the water!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0566",
+      "en_US": "{STRVAR_1 1, 0, 0} had fun dancing a dance!"
+    },
+    {
+      "id": "FollowerTalk_Text_0567",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is so happy, it began\n",
+        "to dance!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0568",
+      "en_US": [
+        "Your Pokémon looked this way\n",
+        "in surprise!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0569",
+      "en_US": "Your Pokémon jumped up in surprise!"
+    },
+    {
+      "id": "FollowerTalk_Text_0570",
+      "en_US": "{STRVAR_1 1, 0, 0} suddenly danced!"
+    },
+    {
+      "id": "FollowerTalk_Text_0571",
+      "en_US": "{STRVAR_1 1, 0, 0} is looking up at the sky..."
+    },
+    {
+      "id": "FollowerTalk_Text_0572",
+      "en_US": [
+        "Your Pokémon seems to be having fun\n",
+        "jumping up and down!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0573",
+      "en_US": "{STRVAR_1 1, 0, 0} is trembling!"
+    },
+    {
+      "id": "FollowerTalk_Text_0574",
+      "en_US": "{STRVAR_1 1, 0, 0} is shaking!"
+    },
+    {
+      "id": "FollowerTalk_Text_0575",
+      "en_US": [
+        "Your Pokémon seems very happy that\n",
+        "it’s soft!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0576",
+      "en_US": [
+        "Your Pokémon turned to face the other\n",
+        "way, showing a defiant expression..."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0577",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is staring intently at the\n",
+        "sky."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0578",
+      "en_US": "{STRVAR_1 1, 0, 0} is peeking in on the two."
+    },
+    {
+      "id": "FollowerTalk_Text_0579",
+      "en_US": [
+        "Ptui!\n",
+        "It seems there was garbage in it!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0580",
+      "en_US": "Something smells strange..."
+    },
+    {
+      "id": "FollowerTalk_Text_0581",
+      "en_US": "{STRVAR_1 1, 0, 0} roared loudly!"
+    },
+    {
+      "id": "FollowerTalk_Text_0582",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} shook the tower with its\n",
+        "voice!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0583",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is looking to the sky and\n",
+        "shouting!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0584",
+      "en_US": [
+        "Your Pokémon is happily gazing at the\n",
+        "beautiful, starry sky!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0585",
+      "en_US": [
+        "Your Pokémon wasn’t watching where it\n",
+        "was going and ran into you!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0586",
+      "en_US": "Your Pokémon doesn’t seem sure yet..."
+    },
+    {
+      "id": "FollowerTalk_Text_0587",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} swayed and danced around\n",
+        "as it pleased."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0588",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} swayed around, dancing in\n",
+        "a strange manner."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0589",
+      "en_US": "{STRVAR_1 1, 0, 0} trembled!"
+    },
+    {
+      "id": "FollowerTalk_Text_0590",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} looks like it might be\n",
+        "preparing for a big showdown!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0591",
+      "en_US": [
+        "Your Pokémon is looking\n",
+        "around restlessly."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0592",
+      "en_US": [
+        "Your Pokémon is suspicious and looking\n",
+        "around restlessly."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0593",
+      "en_US": "{STRVAR_1 1, 0, 0} seems happy to be all wet!"
+    },
+    {
+      "id": "FollowerTalk_Text_0594",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems unhappy to be all\n",
+        "wet..."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0595",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems very refreshed to\n",
+        "be all wet!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0596",
+      "en_US": [
+        "Your Pokémon is playing around and\n",
+        "splashing in the water!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0597",
+      "en_US": "{STRVAR_1 1, 0, 0} suddenly shouted!"
+    },
+    {
+      "id": "FollowerTalk_Text_0598",
+      "en_US": "{STRVAR_1 1, 0, 0} slapped at the ground!"
+    },
+    {
+      "id": "FollowerTalk_Text_0599",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} looked up at the ceiling\n",
+        "and howled!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0600",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} suddenly started spinning\n",
+        "around!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0601",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} suddenly started\n",
+        "shouting!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0602",
+      "en_US": "{STRVAR_1 1, 0, 0} trembled."
+    },
+    {
+      "id": "FollowerTalk_Text_0603",
+      "en_US": [
+        "It is looking at the {STRVAR_1 8, 4, 0}\n",
+        "in its grasp...and drooling..."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0604",
+      "en_US": [
+        "Your Pokémon wants to give the\n",
+        "{STRVAR_1 8, 4, 0} it’s holding to your mom!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0605",
+      "en_US": [
+        "Your Pokémon is staring intently at the\n",
+        "mountain peak."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0606",
+      "en_US": [
+        "Your Pokémon is happily looking at the\n",
+        "red sky!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0607",
+      "en_US": [
+        "Your Pokémon is staring spellbound at\n",
+        "the night sky!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0608",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} shook the tower with\n",
+        "its cry!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0609",
+      "en_US": "{STRVAR_1 1, 0, 0} howled loudly!"
+    },
+    {
+      "id": "FollowerTalk_Text_0610",
+      "en_US": "{STRVAR_1 1, 0, 0} danced a fun dance!"
+    },
+    {
+      "id": "FollowerTalk_Text_0611",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} danced around very\n",
+        "happily!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0612",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} blew out a plume of fire\n",
+        "and looked eager!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0613",
+      "en_US": "{STRVAR_1 1, 0, 0} roared loudly!"
+    },
+    {
+      "id": "FollowerTalk_Text_0614",
+      "en_US": [
+        "Whoa! {STRVAR_1 1, 0, 0} suddenly hugged\n",
+        "you!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0615",
+      "en_US": "Whoa! {STRVAR_1 1, 0, 0} is suddenly playful!"
+    },
+    {
+      "id": "FollowerTalk_Text_0616",
+      "en_US": [
+        "Whoa! {STRVAR_1 1, 0, 0} suddenly danced in\n",
+        "happiness!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0617",
+      "en_US": [
+        "Whoa!\n",
+        "A cold wind suddenly blew!\f",
+        "And now it looks happy?"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0618",
+      "en_US": [
+        "Whoa! Your Pokémon suddenly snuggled\n",
+        "up to you!\f",
+        "Pat it on the head?{YESNO 0}"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0619",
+      "en_US": [
+        "Waah!\n",
+        "Your Pokémon suddenly splashed water!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0620",
+      "en_US": [
+        "Waah!\n",
+        "Your Pokémon suddenly howled!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0621",
+      "en_US": [
+        "Huh? Your Pokémon found something on\n",
+        "top of the mountain?"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0622",
+      "en_US": [
+        "Your Pokémon seems to have gotten\n",
+        "a little shock!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0623",
+      "en_US": "Your Pokémon is shouting happily!"
+    },
+    {
+      "id": "FollowerTalk_Text_0624",
+      "en_US": "...Your Pokémon seems a bit bored."
+    },
+    {
+      "id": "FollowerTalk_Text_0625",
+      "en_US": "Your Pokémon seems a little sad!"
+    },
+    {
+      "id": "FollowerTalk_Text_0626",
+      "en_US": [
+        "Oh! Your Pokémon seems to have eaten\n",
+        "something that disagreed with it..."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0627",
+      "en_US": [
+        "Waah!\n",
+        "Your Pokémon is acting very surprised!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0628",
+      "en_US": [
+        "...Your Pokémon appears to be somewhat\n",
+        "hardened and unable to move."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0629",
+      "en_US": [
+        "Your Pokémon seems to be having a\n",
+        "great time!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0630",
+      "en_US": "...Your Pokémon is so very angry!"
+    },
+    {
+      "id": "FollowerTalk_Text_0631",
+      "en_US": "Your Pokémon is indescribably happy!"
+    },
+    {
+      "id": "FollowerTalk_Text_0632",
+      "en_US": [
+        "Oh!\n",
+        "Your Pokémon seems about to cry!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0633",
+      "en_US": [
+        "Your Pokémon appears to be \n",
+        "contemplative and downhearted..."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0634",
+      "en_US": [
+        "...Looks like your Pokémon is overdoing\n",
+        "it a little."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0635",
+      "en_US": [
+        "Your Pokémon is so surprised,\n",
+        "it jumped!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0636",
+      "en_US": [
+        "Your Pokémon is staring blankly\n",
+        "and drooling..."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0637",
+      "en_US": [
+        "How nice! Your Pokémon is bouncing\n",
+        "around happily!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0638",
+      "en_US": [
+        "Waah!\n",
+        "Your Pokémon shivered!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0639",
+      "en_US": [
+        "Waah!\n",
+        "Your Pokémon nuzzled your face!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0640",
+      "en_US": [
+        "Oh!\n",
+        "Your Pokémon seems about to cry..."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0641",
+      "en_US": "Your Pokémon seems so happy!"
+    },
+    {
+      "id": "FollowerTalk_Text_0642",
+      "en_US": "Your Pokémon is in a daze..."
+    },
+    {
+      "id": "FollowerTalk_Text_0643",
+      "en_US": [
+        "Your Pokémon seems to be having fun\n",
+        "playing with {STRVAR_1 3, 2, 0}!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0644",
+      "en_US": [
+        "Your Pokémon is grumbling because it\n",
+        "wants you to pay more attention to it."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0645",
+      "en_US": [
+        "Your Pokémon feels safer just by seeing\n",
+        "{STRVAR_1 3, 2, 0}’s face."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0646",
+      "en_US": [
+        "Oh!\n",
+        "Your Pokémon seemed about to fall..."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0647",
+      "en_US": [
+        "Your Pokémon is so surprised,\n",
+        "it jumped!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0648",
+      "en_US": [
+        "Your Pokémon is staring blankly\n",
+        "and drooling..."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0649",
+      "en_US": [
+        "Your Pokémon seems to be a\n",
+        "bit despondent..."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0650",
+      "en_US": [
+        "Your Pokémon started chewing on the\n",
+        "other shoe!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0651",
+      "en_US": [
+        "Your Pokémon seems to have been a\n",
+        "little surprised!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0652",
+      "en_US": [
+        "Your Pokémon thinks it’s funny to keep\n",
+        "poking at you..."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0653",
+      "en_US": [
+        "Your Pokémon seems to be a\n",
+        "bit despondent..."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0654",
+      "en_US": [
+        "Ah! Your Pokémon ate something that\n",
+        "tasted bad and is trying to spit it out!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0655",
+      "en_US": [
+        "...Your Pokémon seems to be\n",
+        "contemplating something."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0656",
+      "en_US": "Now, it’s licking..."
+    },
+    {
+      "id": "FollowerTalk_Text_0657",
+      "en_US": [
+        "Your Pokémon seemed to be\n",
+        "contemplating something."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0658",
+      "en_US": [
+        "Ah! Your Pokémon seems surprised that\n",
+        "the shelves look about to break!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0659",
+      "en_US": [
+        "Your Pokémon opened its mouth and a\n",
+        "scrap of paper fell out."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0660",
+      "en_US": [
+        "Ack! It seems to have something caught\n",
+        "in its throat... It keeps spitting."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0661",
+      "en_US": "Your Pokémon seems a bit embarrassed."
+    },
+    {
+      "id": "FollowerTalk_Text_0662",
+      "en_US": [
+        "Ack! Your Pokémon seems to have been\n",
+        "zapped a bit."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0663",
+      "en_US": [
+        "Your Pokémon stopped, but appears\n",
+        "concerned about that switch."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0664",
+      "en_US": [
+        "Clunk!\r",
+        "...But--\n",
+        "It seems nothing happened."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0665",
+      "en_US": [
+        "Your Pokémon is not moving, but it’s\n",
+        "drooling a lot..."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0666",
+      "en_US": [
+        "Ack! It seems to have something caught\n",
+        "in its throat... It keeps spitting."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0667",
+      "en_US": [
+        "Your Pokémon pulled a piece of garbage\n",
+        "out of its mouth!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0668",
+      "en_US": [
+        "Ack! It seems to have something caught\n",
+        "in its throat... It keeps spitting."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0669",
+      "en_US": [
+        "Your Pokémon started happily spinning\n",
+        "in circles!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0670",
+      "en_US": "...Your Pokémon seems a bit lonely."
+    },
+    {
+      "id": "FollowerTalk_Text_0671",
+      "en_US": "Your Pokémon is bouncing happily!"
+    },
+    {
+      "id": "FollowerTalk_Text_0672",
+      "en_US": [
+        "Your Pokémon made a sour face and\n",
+        "spat out some garbage!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0673",
+      "en_US": "Your Pokémon shouted in surprise!"
+    },
+    {
+      "id": "FollowerTalk_Text_0674",
+      "en_US": "Your Pokémon shouted in happiness!"
+    },
+    {
+      "id": "FollowerTalk_Text_0675",
+      "en_US": [
+        "Your Pokémon is jumping up and down\n",
+        "with glee!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0676",
+      "en_US": [
+        "Your Pokémon is shouting\n",
+        "in reaction!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0677",
+      "en_US": [
+        "Your Pokémon made a strange noise\n",
+        "in surprise!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0678",
+      "en_US": "Your Pokémon happily danced around!"
+    },
+    {
+      "id": "FollowerTalk_Text_0679",
+      "en_US": [
+        "Your Pokémon seems happy and is\n",
+        "pushing you!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0680",
+      "en_US": "Your Pokémon replied in a loud voice!"
+    },
+    {
+      "id": "FollowerTalk_Text_0681",
+      "en_US": [
+        "Your Pokémon seems very happy that\n",
+        "you’ve played with it!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0682",
+      "en_US": "Your Pokémon shouted in surprise!"
+    },
+    {
+      "id": "FollowerTalk_Text_0683",
+      "en_US": "Your Pokémon shouted in surprise!"
+    },
+    {
+      "id": "FollowerTalk_Text_0684",
+      "en_US": [
+        "Your Pokémon is grinding its teeth\n",
+        "in remorse!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0685",
+      "en_US": [
+        "Your Pokémon is growling quietly\n",
+        "in contemplation..."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0686",
+      "en_US": [
+        "Your Pokémon pulled garbage out of\n",
+        "its mouth!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0687",
+      "en_US": [
+        "Your Pokémon is spinning in circles out\n",
+        "of extreme happiness!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0688",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is dancing in the same\n",
+        "manner as the Kimono Girls."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0689",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} danced along with the\n",
+        "Kimono Girls!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0690",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} took the opportunity to\n",
+        "show off how strong it is!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0691",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} sparkled in concert\n",
+        "with Amphy!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0692",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is staying completely\n",
+        "still--imitating a tree!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0693",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is standing perfectly still\n",
+        "and might be imitating a tree..."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0694",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is waggling a finger and\n",
+        "dancing!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0695",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is looking at the lift and\n",
+        "feeling a touch of queasiness."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0696",
+      "en_US": "{STRVAR_1 1, 0, 0} began to scuttle around!"
+    },
+    {
+      "id": "FollowerTalk_Text_0697",
+      "en_US": "{STRVAR_1 1, 0, 0} moved sideways!"
+    },
+    {
+      "id": "FollowerTalk_Text_0698",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} started breathing roughly\n",
+        "through its nose in excitement!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0699",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is having fun swaying\n",
+        "back and forth."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0700",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} suddenly began crying\n",
+        "softly!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0701",
+      "en_US": "{STRVAR_1 1, 0, 0} is jumping energetically!"
+    },
+    {
+      "id": "FollowerTalk_Text_0702",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is rummaging in the\n",
+        "garbage can..."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0703",
+      "en_US": "{STRVAR_1 1, 0, 0} seems somehow sad..."
+    },
+    {
+      "id": "FollowerTalk_Text_0704",
+      "en_US": "{STRVAR_1 1, 0, 0} is trembling with fear."
+    },
+    {
+      "id": "FollowerTalk_Text_0705",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is motionless, not looking\n",
+        "at anything, as if in meditation."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0706",
+      "en_US": "{STRVAR_1 1, 0, 0} is jumping around happily!"
+    },
+    {
+      "id": "FollowerTalk_Text_0707",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems to want to play with\n",
+        "other Pokémon!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0708",
+      "en_US": "{STRVAR_1 1, 0, 0} swung its belly around."
+    },
+    {
+      "id": "FollowerTalk_Text_0709",
+      "en_US": "{STRVAR_1 1, 0, 0} stammered something..."
+    },
+    {
+      "id": "FollowerTalk_Text_0710",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} opened its mouth wide and\n",
+        "howled!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0711",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} stuck out its claws and\n",
+        "ROOOOAAARRRED!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0712",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} moved its long body and\n",
+        "let out a great big roar!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0713",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} looked up at the sky and\n",
+        "shouted loudly!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0714",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0}’s body shook with a great\n",
+        "roar!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0715",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} gathered itself up and let\n",
+        "out a huge roar!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0716",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is happily zapping and\n",
+        "jumping in circles!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0717",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is having fun dancing\n",
+        "a lively jig!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0718",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is staring steadfastly at\n",
+        "{STRVAR_1 3, 2, 0}’s face."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0719",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is sniffing\n",
+        "at {STRVAR_1 3, 2, 0}."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0720",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is looking this way and\n",
+        "smiling!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0721",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} doesn’t seem used to its\n",
+        "own name yet."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0722",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} sent a ring-shaped cloud\n",
+        "of spores into the air!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0723",
+      "en_US": "{STRVAR_1 1, 0, 0} is clinging to the tree!"
+    },
+    {
+      "id": "FollowerTalk_Text_0724",
+      "en_US": [
+        "...Oh?\n",
+        "{STRVAR_1 1, 0, 0}’s appearance...\f",
+        "Didn’t change!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0725",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is extending its vines and\n",
+        "wrapping itself in them!\f",
+        "Seems like fun!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0726",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} danced better than the\n",
+        "Kimono Girls!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0727",
+      "en_US": [
+        "Your Pokémon seems to be smelling a\n",
+        "nostalgically familiar scent..."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0728",
+      "en_US": "{STRVAR_1 1, 0, 0} is very relaxed."
+    },
+    {
+      "id": "FollowerTalk_Text_0729",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is looking restlessly at\n",
+        "the lab."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0730",
+      "en_US": [
+        "Your Pokémon seems concerned that the\n",
+        "machine is running."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0731",
+      "en_US": "{STRVAR_1 1, 0, 0} is feeling very eager!"
+    },
+    {
+      "id": "FollowerTalk_Text_0732",
+      "en_US": "{STRVAR_1 1, 0, 0} is in high spirits!"
+    },
+    {
+      "id": "FollowerTalk_Text_0733",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is concerned about the\n",
+        "contents of the case."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0734",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is looking restlessly at\n",
+        "the rock."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0735",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is running along the side\n",
+        "of the pool!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0736",
+      "en_US": "Why is it doing warm-up exercises?"
+    },
+    {
+      "id": "FollowerTalk_Text_0737",
+      "en_US": "{STRVAR_1 1, 0, 0} greeted SLOWBRO!"
+    },
+    {
+      "id": "FollowerTalk_Text_0738",
+      "en_US": "{STRVAR_1 1, 0, 0} greeted BAYLEEF!"
+    },
+    {
+      "id": "FollowerTalk_Text_0739",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is staring fixedly at\n",
+        "the sea."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0740",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems to want to ride in\n",
+        "the boat!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0741",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems to want to ride the\n",
+        "train!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0742",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is looking up at\n",
+        "the ceiling."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0743",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} was surprised by the\n",
+        "creaking of the floor!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0744",
+      "en_US": "{STRVAR_1 1, 0, 0} mimicked {STRVAR_1 3, 2, 0}!"
+    },
+    {
+      "id": "FollowerTalk_Text_0745",
+      "en_US": [
+        "...... ...... ......\r",
+        "...... ...... ......\r",
+        "...... ...... ......\r",
+        "...... ...... {STRVAR_1 1, 0, 0}\n",
+        "silently nodded!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0746",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems happy to have taken\n",
+        "a shower!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0747",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems unhappy to have\n",
+        "taken a shower..."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0748",
+      "en_US": "{STRVAR_1 1, 0, 0} is drooling..."
+    },
+    {
+      "id": "FollowerTalk_Text_0749",
+      "en_US": "{STRVAR_1 1, 0, 0} swallowed hard."
+    },
+    {
+      "id": "FollowerTalk_Text_0750",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} is feeling nervous and a\n",
+        "touch claustrophobic."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0751",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems to have run into\n",
+        "something!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0752",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} seems to want to play with\n",
+        "AIPOM!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0753",
+      "en_US": "{STRVAR_1 1, 0, 0} is rolling a rock around."
+    },
+    {
+      "id": "FollowerTalk_Text_0754",
+      "en_US": "{STRVAR_1 1, 0, 0} swallowed hard."
+    },
+    {
+      "id": "FollowerTalk_Text_0755",
+      "en_US": "{STRVAR_1 1, 0, 0} nodded slowly."
+    },
+    {
+      "id": "FollowerTalk_Text_0756",
+      "en_US": "{STRVAR_1 1, 0, 0} let out a battle cry!"
+    },
+    {
+      "id": "FollowerTalk_Text_0757",
+      "en_US": "{STRVAR_1 1, 0, 0} is concentrating..."
+    },
+    {
+      "id": "FollowerTalk_Text_0758",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} suddenly let out a battle\n",
+        "cry!"
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0759",
+      "en_US": [
+        "{STRVAR_1 3, 0, 0} put away the\n",
+        "{STRVAR_1 31, 1, 0} in the Fashion Case."
+      ]
+    },
+    {
+      "id": "FollowerTalk_Text_0760",
+      "en_US": [
+        "{STRVAR_1 3, 0, 0} received\n",
+        "{STRVAR_1 31, 1, 0}!\r",
+        "But the Fashion Case is already full!"
+      ]
+    }
+  ]
+}

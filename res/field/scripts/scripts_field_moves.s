@@ -50,7 +50,7 @@ FieldMoves_UseCutFromField:
     BufferPartyMonNickname 0, VAR_RESULT
     Message FieldMoves_Text_PokemonUsedCut
     CloseMessage
-    PlayHMCutIn VAR_0x8004
+    FollowerMonFieldMove VAR_0x8004, 20, 12 // ENTRY P64: Cut, +20 mood, TYPE_GRASS
     StartDestroyObstacleAnimation 0, VAR_0x8005
     WaitTime 7, VAR_RESULT
     RemoveObject VAR_LAST_TALKED
@@ -67,7 +67,7 @@ FieldMoves_UseCutFromMenu:
     BufferPartyMonNickname 0, VAR_0x8000
     Message FieldMoves_Text_PokemonUsedCut
     CloseMessage
-    PlayHMCutIn VAR_0x8000
+    FollowerMonFieldMove VAR_0x8000, 20, 12 // ENTRY P64: Cut, +20 mood, TYPE_GRASS
     StartDestroyObstacleAnimation 0, VAR_0x8005
     WaitTime 7, VAR_RESULT
     RemoveObject VAR_LAST_TALKED
@@ -151,7 +151,7 @@ FieldMoves_UseRockSmashFromField:
     BufferPartyMonNickname 0, VAR_0x8004
     Message FieldMoves_Text_PokemonUsedRockSmash
     CloseMessage
-    PlayHMCutIn VAR_0x8004
+    FollowerMonFieldMove VAR_0x8004, 20, 1 // ENTRY P64: Rock Smash, +20 mood, TYPE_FIGHTING
     StartDestroyObstacleAnimation 1, VAR_0x8005
     WaitTime 10, VAR_RESULT
     RemoveObject VAR_LAST_TALKED
@@ -168,7 +168,7 @@ FieldMoves_UseRockSmashFromMenu:
     BufferPartyMonNickname 0, VAR_0x8000
     Message FieldMoves_Text_PokemonUsedRockSmash
     CloseMessage
-    PlayHMCutIn VAR_0x8000
+    FollowerMonFieldMove VAR_0x8000, 20, 1 // ENTRY P64: Rock Smash, +20 mood, TYPE_FIGHTING
     StartDestroyObstacleAnimation 1, VAR_0x8005
     WaitTime 10, VAR_RESULT
     RemoveObject VAR_LAST_TALKED
@@ -210,7 +210,7 @@ FieldMoves_UseStrengthFromField:
     SetVar VAR_0x8004, VAR_RESULT
     BufferPartyMonNickname 0, VAR_RESULT
     Message FieldMoves_Text_PokemonUsedStrength
-    PlayHMCutIn VAR_0x8004
+    FollowerMonFieldMove VAR_0x8004, 0, 0 // ENTRY P64: Strength, TYPE_NORMAL
     CloseMessage
     Message FieldMoves_Text_PokemonStrengthMadePossibleToMove
     WaitButton
@@ -235,7 +235,7 @@ FieldMoves_UseStrengthFromMenu:
     BufferPartyMonNickname 0, VAR_0x8000
     Message FieldMoves_Text_PokemonUsedStrength
     CloseMessage
-    PlayHMCutIn VAR_0x8000
+    FollowerMonFieldMove VAR_0x8000, 0, 0 // ENTRY P64: Strength, TYPE_NORMAL
     Message FieldMoves_Text_PokemonStrengthMadePossibleToMove
     WaitButton
     CloseMessage
@@ -396,7 +396,7 @@ FieldMoves_UseFlashFromMenu:
     BufferPartyMonNickname 0, VAR_0x8000
     Message FieldMoves_Text_PokemonUsedFlash
     CloseMessage
-    PlayHMCutIn VAR_0x8000
+    FollowerMonFieldMove VAR_0x8000, 0, 14 // ENTRY P64: Flash, TYPE_PSYCHIC
     DoFlashFunc FIELD_MOVE_FUNC_SET_ACTIVE
     ScrCmd_0C3
     WaitTime 42, VAR_RESULT
