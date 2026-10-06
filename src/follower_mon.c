@@ -23,6 +23,7 @@
 #include "party.h"
 #include "player_avatar.h"
 #include "pokemon.h"
+#include "pokemon_color_mod.h"
 #include "savedata.h"
 #include "script_manager.h"
 #include "system_flags.h"
@@ -2087,6 +2088,56 @@ static const u16 *FollowerMon_GetHGShinyPalette(u16 graphicsID)
     }
 }
 
+// ENTRY P78: HeartGold's two per-species follower colour fixes, copied from PokeHeartGold src/follow_mon.c
+// (FollowMon_GetBrightnessPercent / FollowMon_GetHueOffsets / FollowMon_BrightenColor; Changelog ENTRY Z and AA).
+// Shiny Totodile's follower palette is a few shades too dark next to its status-screen sprite, so each colour is
+// scaled by FOLLOWER_HG_TOTODILE_SHINY_BRIGHTNESS_PERCENT per RGB channel BEFORE the personality rotation.
+#define FOLLOWER_HG_TOTODILE_SHINY_BRIGHTNESS_PERCENT 125
+
+static u32 FollowerMon_GetHGBrightnessPercent(u16 graphicsID, BOOL shiny)
+{
+    if (shiny && graphicsID == OBJ_EVENT_GFX_TOTODILE) {
+        return FOLLOWER_HG_TOTODILE_SHINY_BRIGHTNESS_PERCENT;
+    }
+
+    return 100;
+}
+
+// Per-colour hue nudges (units of 2 degrees): the shiny Totodile / Feraligatr follower body colours (palette
+// indexes 9-12) land 15-28 degrees higher on the hue wheel than the status sprite's after the same rotation
+// (blue drifting to purple), so HG pulls them back by 16 degrees (-8 * 2). All other colours are unchanged.
+static const s8 sFollowerHGShinyTotodileLineHueOffsets[PALETTE_SIZE] = {
+    0, 0, 0, 0, 0, 0, 0, 0, 0, -8, -8, -8, -8, 0, 0, 0
+};
+
+static const s8 *FollowerMon_GetHGHueOffsets(u16 graphicsID, BOOL shiny)
+{
+    if (shiny && (graphicsID == OBJ_EVENT_GFX_TOTODILE || graphicsID == OBJ_EVENT_GFX_FERALIGATR)) {
+        return sFollowerHGShinyTotodileLineHueOffsets;
+    }
+
+    return NULL;
+}
+
+static u16 FollowerMon_BrightenColor(u16 color, u32 percent)
+{
+    u32 r = (color & 0x1F) * percent / 100;
+    u32 g = ((color >> 5) & 0x1F) * percent / 100;
+    u32 b = ((color >> 10) & 0x1F) * percent / 100;
+
+    if (r > 31) {
+        r = 31;
+    }
+    if (g > 31) {
+        g = 31;
+    }
+    if (b > 31) {
+        b = 31;
+    }
+
+    return (u16)(r | (g << 5) | (b << 10));
+}
+
 // First non-egg, non-fainted party member, or NULL if none (whole party fainted/eggs only/empty) - the
 // same "who is the active party leader" rule used elsewhere in this project (e.g. the sibling PokeHeartGold
 // project's FollowMon_GetLeadColorInfo uses the identical rule).
@@ -2426,11 +2477,21 @@ BOOL ScrCmd_FollowerMonHealRespawn(ScriptContext *ctx)
     return FALSE;
 }
 
-// FOLLOWER PALETTE: every follower sprite comes from HeartGold with two palettes, normal (tsure_poke0) and shiny
-// (tsure_poke1), stored here as sFollowerHGPristinePalettes / sFollowerHGShinyPalettes (+ the bulk tables). The
-// billboard pipeline uploads the texture's own palette; this re-uploads the one matching the party leader's real
-// shininess into this one billboard's own VRAM palette slot. It runs every field frame because the normal pipeline
-// can re-upload the texture's palette on its own. Palettes are used exactly as HeartGold has them (no colour change).
+// FOLLOWER COLOR MOD (2026-09-23): personality-based palette rotation for the follower's OWN overworld
+// walking sprite - a separate problem from ENTRY P12's fix (which only covers Pokemon sprites built
+// through PokemonSpriteTemplate/PokemonSpriteManager: battle, PC box, summary screen, starter select).
+// The follower's on-map sprite is a species graphic (OBJ_EVENT_GFX_<SPECIES>) rendered through Platinum's
+// generic 2D "billboard" system instead - a textured quad in 3D space, backed by an ordinary
+// NNSG3dResTex/NNSGfdPlttKey pair (confirmed via src/billboard.c/billboard_vram_transfer.c - the same
+// underlying NNS_Gfd VRAM-transfer machinery the sibling PokeHeartGold project's own, 3D-model-based
+// follower already uses for this exact purpose - see that project's FollowMon_RefreshModelPalette, the
+// mechanism this is directly modeled on). Rather than splice a rotation into the vanilla billboard-loading
+// pipeline itself (src/overlay005/ov5_021EB1A0.c and friends - a large, largely undecompiled dispatch
+// system, real risk of subtly breaking every OTHER overworld object that reuses it, not just the
+// follower), this takes HG's own approach: let the normal pipeline load and upload the pristine palette
+// completely unmodified, then separately (and repeatedly, so it stays correct even if the normal pipeline
+// ever re-uploads the pristine version on its own) push a ROTATED COPY over the top, directly into this
+// one billboard's own VRAM palette slot only.
 void FollowerMon_RefreshPalette(FieldSystem *fieldSystem)
 {
     MapObject *followerObj = FollowerMon_GetMapObject(fieldSystem);
@@ -2444,35 +2505,84 @@ void FollowerMon_RefreshPalette(FieldSystem *fieldSystem)
         return;
     }
 
+    u32 personality = Pokemon_GetValue(leadMon, MON_DATA_PERSONALITY, NULL);
+
     // ov5_021EB1A0 (src/overlay005/ov5_021EB1A0.c) is overlay5-resident - only safe to call here because
     // every caller of THIS function (FieldMap_Main, src/overlay005/fieldmap.c - itself part of overlay5)
-    // is guaranteed to run only while overlay5 is already loaded.
+    // is guaranteed to run only while overlay5 is already loaded. It already knows how to find the right
+    // Billboard* for any graphics ID, including the generic-billboard case follower species use (confirmed
+    // by reading its own switch statement) - no need to duplicate that lookup logic here.
     Billboard *billboard = ov5_021EB1A0(followerObj);
     if (billboard == NULL) {
         // Not created yet (e.g. this is the same frame the follower object itself was just spawned) -
-        // FieldMap_Main calls this every frame, so it'll catch up shortly.
+        // nothing to rotate yet. FieldMap_Main calls this every frame, so it'll catch up shortly.
+        return;
+    }
+
+    NNSG3dResTex *texture = Billboard_GetTexture(billboard);
+    if (texture == NULL) {
         return;
     }
 
     u16 graphicsID = MapObject_GetGraphicsID(followerObj);
-    const u16 *pltt = FollowerMon_GetHGPristinePalette(graphicsID);
+    const u16 *hgPristinePltt = FollowerMon_GetHGPristinePalette(graphicsID);
 
-    if (pltt == NULL) {
-        // Not one of the HeartGold follower sprites: its texture's own palette is used as-is.
-        return;
+    static u16 sFollowerPlttRotated[PALETTE_SIZE];
+
+    if (hgPristinePltt != NULL) {
+        // ENTRY P23 (2026-10-01): use the verified-correct hardcoded palette instead of asking NNS_G3D to
+        // resolve it at runtime - see sFollowerHGPristinePalettes' own comment for the full investigation.
+        // ENTRY P52 (2026-10-01): if the party leader is shiny, use tsure_poke1's palette instead of
+        // tsure_poke0's - matching HG's own behavior (per the user's own report in ENTRY P23: "0 is nonshiny
+        // 1 is shiny. HG auto adjusts for shininess for follower mons to change their color").
+        // ENTRY P78: HeartGold's follower HSV rotation is now applied on top (ENTRY P22 had switched it off for
+        // HG-sourced species while chasing a shading question). Same order as HG's FollowMon_BuildRotatedPalette
+        // (PokeHeartGold src/follow_mon.c, Changelog ENTRY C/P/Z/AA): take the variant matching the leader's real
+        // shininess, brighten it for the one species HG brightens, then the personality hue/saturation/value
+        // rotation (with HG's per-colour hue nudge where HG has one). Index 0 (transparency) is never touched.
+        BOOL shiny = FALSE;
+        const u16 *hgShinyPltt = FollowerMon_GetHGShinyPalette(graphicsID);
+        if (Pokemon_IsShiny(leadMon) && hgShinyPltt != NULL) {
+            hgPristinePltt = hgShinyPltt;
+            shiny = TRUE;
+        }
+        MI_CpuCopy16(hgPristinePltt, sFollowerPlttRotated, sizeof(sFollowerPlttRotated));
+
+        u32 brightnessPercent = FollowerMon_GetHGBrightnessPercent(graphicsID, shiny);
+
+        if (brightnessPercent != 100) {
+            for (int i = 1; i < PALETTE_SIZE; i++) {
+                sFollowerPlttRotated[i] = FollowerMon_BrightenColor(sFollowerPlttRotated[i], brightnessPercent);
+            }
+        }
+
+        const s8 *hueOffsets = FollowerMon_GetHGHueOffsets(graphicsID, shiny);
+
+        if (hueOffsets != NULL) {
+            PersonalityRotatePaletteWithHueOffsets(sFollowerPlttRotated, PALETTE_SIZE, personality, hueOffsets);
+        } else {
+            PersonalityRotatePalette(sFollowerPlttRotated, PALETTE_SIZE, personality);
+        }
+    } else {
+        // The pristine (unrotated) palette lives inside the shared texture resource itself -
+        // GetPlttDataVRAMBuffer (src/billboard_vram_transfer.c) just computes a pointer into it, it does
+        // not copy or allocate. This resource may be shared by every OTHER object using the same graphics
+        // ID (e.g. if this same species also appears as an ordinary NPC elsewhere), so it must only ever
+        // be READ here, never written.
+        u16 *pristinePltt = GetPlttDataVRAMBuffer(texture, 0);
+        if (pristinePltt == NULL) {
+            return;
+        }
+
+        MI_CpuCopy16(pristinePltt, sFollowerPlttRotated, sizeof(sFollowerPlttRotated));
+
+        // ENTRY P22 (2026-10-01): skip the rotation entirely for the HG-sourced species (handled by the
+        // hgPristinePltt branch above) - native species still get it, unchanged from before ENTRY P22.
+        PersonalityRotatePalette(sFollowerPlttRotated, PALETTE_SIZE, personality);
     }
 
-    const u16 *shinyPltt = FollowerMon_GetHGShinyPalette(graphicsID);
-
-    if (Pokemon_IsShiny(leadMon) && shinyPltt != NULL) {
-        pltt = shinyPltt;
-    }
-
-    static u16 sFollowerPltt[PALETTE_SIZE];
-
-    MI_CpuCopy16(pltt, sFollowerPltt, sizeof(sFollowerPltt));
-    DC_FlushRange(sFollowerPltt, sizeof(sFollowerPltt));
-    VramTransfer_Request(NNS_GFD_DST_3D_TEX_PLTT, NNS_GfdGetPlttKeyAddr(billboard->plttKey), sFollowerPltt, sizeof(sFollowerPltt));
+    DC_FlushRange(sFollowerPlttRotated, sizeof(sFollowerPlttRotated));
+    VramTransfer_Request(NNS_GFD_DST_3D_TEX_PLTT, NNS_GfdGetPlttKeyAddr(billboard->plttKey), sFollowerPlttRotated, sizeof(sFollowerPlttRotated));
 }
 
 // ENTRY P27/P28 (2026-10-01): two prior idle-animation attempts (a HG-species branch inside

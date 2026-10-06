@@ -203,13 +203,12 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, enum HeapID
             u16 species = trmon[i].species & 0x3FF;
             u8 form = (trmon[i].species & 0xFC00) >> TRAINER_MON_FORM_SHIFT;
 
-            rnd = trmon[i].ivScale + trmon[i].level + species + dto->trainerIDs[battler];
-            LCRNG_SetSeed(rnd);
-
-            for (j = 0; j < dto->trainer[battler].header.trainerType; j++) {
-                rnd = LCRNG_Next();
-            }
-
+            // HG SYNC (port of PokeHeartGold ENTRY AY item 1): personality used to be seeded deterministically from
+            // ivScale/level/species/trainerID and rolled a fixed number of times, so a given trainer's given party
+            // slot had the exact same personality (nature, ability slot, colour) on every encounter. Now a random
+            // roll from the global RNG (restored to oldSeed at the end of this function, as before, so the overworld
+            // RNG is unaffected). The gender byte is still packed into the low 8 bits exactly as before.
+            rnd = (LCRNG_Next() | ((u32)LCRNG_Next() << 16));
             rnd = (rnd << 8) + genderMod;
             ivs = trmon[i].ivScale * MAX_IVS_SINGLE_STAT / MAX_IV_SCALE;
 
@@ -228,13 +227,12 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, enum HeapID
             u16 species = trmon[i].species & 0x3FF;
             u8 form = (trmon[i].species & 0xFC00) >> TRAINER_MON_FORM_SHIFT;
 
-            rnd = trmon[i].ivScale + trmon[i].level + species + dto->trainerIDs[battler];
-            LCRNG_SetSeed(rnd);
-
-            for (j = 0; j < dto->trainer[battler].header.trainerType; j++) {
-                rnd = LCRNG_Next();
-            }
-
+            // HG SYNC (port of PokeHeartGold ENTRY AY item 1): personality used to be seeded deterministically from
+            // ivScale/level/species/trainerID and rolled a fixed number of times, so a given trainer's given party
+            // slot had the exact same personality (nature, ability slot, colour) on every encounter. Now a random
+            // roll from the global RNG (restored to oldSeed at the end of this function, as before, so the overworld
+            // RNG is unaffected). The gender byte is still packed into the low 8 bits exactly as before.
+            rnd = (LCRNG_Next() | ((u32)LCRNG_Next() << 16));
             rnd = (rnd << 8) + genderMod;
             ivs = trmon[i].ivScale * MAX_IVS_SINGLE_STAT / MAX_IV_SCALE;
 
@@ -258,13 +256,12 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, enum HeapID
             u16 species = trmon[i].species & 0x3FF;
             u8 form = (trmon[i].species & 0xFC00) >> TRAINER_MON_FORM_SHIFT;
 
-            rnd = trmon[i].ivScale + trmon[i].level + species + dto->trainerIDs[battler];
-            LCRNG_SetSeed(rnd);
-
-            for (j = 0; j < dto->trainer[battler].header.trainerType; j++) {
-                rnd = LCRNG_Next();
-            }
-
+            // HG SYNC (port of PokeHeartGold ENTRY AY item 1): personality used to be seeded deterministically from
+            // ivScale/level/species/trainerID and rolled a fixed number of times, so a given trainer's given party
+            // slot had the exact same personality (nature, ability slot, colour) on every encounter. Now a random
+            // roll from the global RNG (restored to oldSeed at the end of this function, as before, so the overworld
+            // RNG is unaffected). The gender byte is still packed into the low 8 bits exactly as before.
+            rnd = (LCRNG_Next() | ((u32)LCRNG_Next() << 16));
             rnd = (rnd << 8) + genderMod;
             ivs = trmon[i].ivScale * MAX_IVS_SINGLE_STAT / MAX_IV_SCALE;
 
@@ -284,13 +281,12 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, enum HeapID
             u16 species = trmon[i].species & 0x3FF;
             u8 form = (trmon[i].species & 0xFC00) >> TRAINER_MON_FORM_SHIFT;
 
-            rnd = trmon[i].ivScale + trmon[i].level + species + dto->trainerIDs[battler];
-            LCRNG_SetSeed(rnd);
-
-            for (j = 0; j < dto->trainer[battler].header.trainerType; j++) {
-                rnd = LCRNG_Next();
-            }
-
+            // HG SYNC (port of PokeHeartGold ENTRY AY item 1): personality used to be seeded deterministically from
+            // ivScale/level/species/trainerID and rolled a fixed number of times, so a given trainer's given party
+            // slot had the exact same personality (nature, ability slot, colour) on every encounter. Now a random
+            // roll from the global RNG (restored to oldSeed at the end of this function, as before, so the overworld
+            // RNG is unaffected). The gender byte is still packed into the low 8 bits exactly as before.
+            rnd = (LCRNG_Next() | ((u32)LCRNG_Next() << 16));
             rnd = (rnd << 8) + genderMod;
             ivs = trmon[i].ivScale * MAX_IVS_SINGLE_STAT / MAX_IV_SCALE;
 

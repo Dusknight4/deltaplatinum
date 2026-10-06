@@ -2836,7 +2836,16 @@ void BuildPokemonSpriteTemplate(PokemonSpriteTemplate *spriteTemplate, u16 speci
 {
     spriteTemplate->spindaSpots = 0;
     spriteTemplate->dummy = 0;
-    spriteTemplate->personality = 0;
+    // COLOR MOD FIX (2026-09-23): this used to be hardcoded to 0 here, with the real personality value
+    // only ever assigned further down for SPECIES_SPINDA (its spot pattern is personality-derived in
+    // vanilla too). ENTRY P5's color-mod hook (BufferPokemonSpritePlttData, src/pokemon_sprite.c) reads
+    // this same field for EVERY species assuming it was already universally populated - it wasn't, so
+    // every non-Spinda Pokemon's personality-based palette rotation was always computed from personality
+    // 0, producing no individual color variation at all (this is what the user reported as "the color
+    // mod isn't working"). Safe to populate for every species: the only other consumer of this field,
+    // TryDrawSpindaSpots (src/pokemon_sprite.c), gates on spindaSpots, not personality, so this doesn't
+    // change Spinda's own behavior at all.
+    spriteTemplate->personality = personality;
     form = Pokemon_SanitizeFormId(species, form);
 
     switch (species) {
@@ -3032,7 +3041,8 @@ static void BuildPokemonSpriteTemplateDP(PokemonSpriteTemplate *spriteTemplate, 
 {
     spriteTemplate->spindaSpots = 0;
     spriteTemplate->dummy = 0;
-    spriteTemplate->personality = 0;
+    // COLOR MOD FIX (2026-09-23): see the identical fix/comment in BuildPokemonSpriteTemplate above.
+    spriteTemplate->personality = personality;
 
     form = Pokemon_SanitizeFormId(species, form);
 

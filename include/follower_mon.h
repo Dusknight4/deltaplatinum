@@ -30,7 +30,7 @@ void FollowerMon_Refresh(FieldSystem *fieldSystem);
 void FollowerMon_Despawn(FieldSystem *fieldSystem);
 
 /**
- * @brief Re-apply the follower's normal or shiny palette (matching the party leader) to its overworld billboard sprite.
+ * @brief Re-apply the follower's personality-based palette rotation to its overworld billboard sprite.
  * Safe to call every field frame (it no-ops quickly if there is no follower or its billboard isn't ready
  * yet). MUST only be called from code that is itself guaranteed to run while overlay5 (the field overlay)
  * is loaded - e.g. FieldMap_Main in src/overlay005/fieldmap.c - since this reaches into overlay5-resident
