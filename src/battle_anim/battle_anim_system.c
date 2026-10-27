@@ -3645,6 +3645,20 @@ int BattleAnimSystem_GetBattlerForm(BattleAnimSystem *system, int battler)
 
 int BattleAnimSystem_GetBattlerPersonality(BattleAnimSystem *system, int battler)
 {
+    // COLOR MOD FIX (2026-10-11, potion/bag-item flicker): the personalities in system->context come from the caller's
+    // MoveAnimation, and every bag-item / held-item / send-out sub-animation builds that struct with
+    // BattleController_SetMoveAnimation(..., battleCtx = NULL, ...), which leaves species/forms/personalities
+    // UNINITIALISED (stack garbage). The colour-rotation hooks that clone a battler's palette (AddPokemonSprite etc.) read
+    // this value, so during the Potion "restore HP" animation the clones were rotated by a random personality and flashed
+    // the wrong colours for a few frames. HeartGold never had this because its hook reads the personality from the live
+    // Pokepic itself. Do the same here: the battler's own on-screen sprite always carries the personality its colours were
+    // built with (including 0 for a Substitute doll), so prefer it and only fall back to the context value without a sprite.
+    PokemonSprite *sprite = BattleAnimSystem_GetBattlerSprite(system, battler);
+
+    if (sprite != NULL) {
+        return PokemonSprite_GetTemplate(sprite)->personality;
+    }
+
     return system->context->battlerPersonalities[battler];
 }
 
